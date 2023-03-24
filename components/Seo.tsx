@@ -2,11 +2,11 @@ import React from 'react';
 import Head from 'next/head';
 
 type Props = {
-  title: string;
+  location: string;
 };
 
-export default function Seo({ title }: Props) {
-  const siteTitle = `José Gonçalves`;
+export default function Seo({ location }: Props) {
+  const siteTitle = `${location} - José Gonçalves`;
   const author = `kikogoncalves`;
   const description = `José Gonçalves' website. Find out more about my projects, articles and work.`;
   const meta = [
@@ -46,7 +46,10 @@ export default function Seo({ title }: Props) {
 
   return (
     <Head>
-      <title>{`${title} | ${siteTitle}`}</title>
+      <title>{siteTitle}</title>
+      {meta.map((m, i) => (
+        <meta key={i} {...m} />
+      ))}
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
