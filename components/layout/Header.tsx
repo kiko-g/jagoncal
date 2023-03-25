@@ -12,7 +12,7 @@ export default function Header({ location }: Props) {
   const [hamburgerOpen, setHamburgerOpen] = React.useState(false);
 
   return (
-    <header className="flex flex-col">
+    <header className={classNames('sticky top-0 z-20 flex flex-col backdrop-blur')}>
       <div className="flex items-center justify-between py-6 px-6 md:px-16 md:py-8">
         <div>
           <Link href="/" className={classNames(location === 'Home' ? 'invisible' : '', 'transition hover:opacity-80')}>

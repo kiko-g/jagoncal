@@ -4,3 +4,10 @@ export type ArticleLink = {
   description: string;
   url: string;
 };
+
+export type ProjectLink = {
+  title: string;
+  description: string;
+  url: string;
+  domain: string;
+};

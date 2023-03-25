@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArticleLink } from '@/@types';
+import type { ArticleLink } from '@/@types';
 import { Layout } from '../components/layout';
 
 type Props = {};
