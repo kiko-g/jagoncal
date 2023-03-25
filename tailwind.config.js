@@ -31,7 +31,7 @@ module.exports = {
         mono: ['var(--firacode-font)', ...fontFamily.mono],
       },
       boxShadow: {
-        uniform: '0 0 10px 0 rgba(0, 0, 0, 0.25)',
+        uniform: '0 0 8px 0 rgba(0, 0, 0, 0.25)',
       },
     },
   },
