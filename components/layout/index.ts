@@ -5,6 +5,6 @@ import Header from './Header';
 import Layout from './Layout';
 import NavDesktop from './NavDesktop';
 import NavMobile from './NavMobile';
-import Socials from './Socials';
+import Photos from './Photos';
 
-export { DarkModeSwitch, Footer, Hamburger, Header, Layout, NavDesktop, NavMobile, Socials };
+export { DarkModeSwitch, Footer, Hamburger, Header, Layout, NavDesktop, NavMobile, Photos };

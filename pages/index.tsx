@@ -1,7 +1,8 @@
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import PhotoOp from '../components/PhotoOp';
-import { Layout, Socials } from '../components/layout';
+import { links } from '../utils/data';
+import { Layout, Photos } from '../components/layout';
 
 export default function Home() {
   return (
@@ -30,10 +31,18 @@ export default function Home() {
             Engineering and a degree in Surveying Engineering from FCUP.
           </p>
 
-          <Socials />
+          <ul className="mt-6 flex gap-6">
+            {links.map((social) => (
+              <li key={social.name} className="group -m-1 p-1">
+                <Link href={social.url}>{social.icon}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <PhotoOp />
+        <div className="mt-16 sm:mt-20">
+          <Photos />
+        </div>
       </article>
     </Layout>
   );

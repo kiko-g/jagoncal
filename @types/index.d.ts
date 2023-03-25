@@ -11,3 +11,15 @@ export type ProjectLink = {
   url: string;
   domain: string;
 };
+
+export type TeachingGroupLink = {
+  title: string;
+  courses: CourseLink[];
+};
+
+export type CourseLink = {
+  name: string;
+  title: string;
+  description: string;
+  url: string;
+};

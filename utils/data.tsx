@@ -1,10 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import { EnvelopeIcon } from '@heroicons/react/24/solid';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
-type Props = {};
-
-const links = [
+export const links = [
   {
     name: 'GitHub',
     text: 'Follow on GitHub',
@@ -94,15 +90,3 @@ const links = [
     ),
   },
 ];
-
-export default function Socials({}: Props) {
-  return (
-    <ul className="mt-6 flex gap-6">
-      {links.map((social) => (
-        <li key={social.name} className="group -m-1 p-1">
-          <Link href={social.url}>{social.icon}</Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
