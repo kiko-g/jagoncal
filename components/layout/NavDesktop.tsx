@@ -6,7 +6,7 @@ type Props = {
   location: string;
 };
 
-export default function Navbar({ location }: Props) {
+export default function NavDesktop({ location }: Props) {
   const navigation = [
     {
       title: 'About',
