@@ -20,10 +20,14 @@ export default function Navbar({ location }: Props) {
       title: 'Projects',
       href: '/projects',
     },
+    {
+      title: 'Teaching',
+      href: '/teaching',
+    },
   ];
 
   return (
-    <nav className="rounded-full border border-gray-200 bg-white/90 px-4 dark:border-white/20 dark:bg-white/10">
+    <nav className="rounded-full border border-gray-200 bg-gray-50 px-4 dark:border-white/20 dark:bg-white/10">
       <ul className="flex gap-4">
         {navigation.map((item) => (
           <li key={item.title}>

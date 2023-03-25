@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import PhotoOp from '../components/PhotoOp';
 import { Layout, Socials } from '../components/layout';
-import { PhotoOp } from '../components/home';
 
 export default function Home() {
   return (
