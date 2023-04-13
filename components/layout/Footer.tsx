@@ -38,7 +38,7 @@ export default function Footer({}: Props) {
                   <Link
                     href={item.href}
                     key={`footer-nav-${item.title}`}
-                    className="transition hover:text-cyan-600 dark:hover:text-cyan-500"
+                    className="transition hover:text-blue-600 dark:hover:text-blue-500"
                   >
                     {item.title}
                   </Link>

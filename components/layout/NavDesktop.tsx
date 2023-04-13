@@ -33,13 +33,13 @@ export default function NavDesktop({ location }: Props) {
           <li key={item.title}>
             <Link
               href={item.href}
-              className="relative block px-3 py-3 text-sm transition hover:text-cyan-500 dark:hover:text-cyan-400"
+              className="relative block px-3 py-3 text-sm transition hover:text-blue-500 dark:hover:text-blue-400"
             >
-              <span className={classNames(location === item.title ? 'text-cyan-500 dark:text-cyan-400' : '')}>
+              <span className={classNames(location === item.title ? 'text-blue-500 dark:text-blue-400' : '')}>
                 {item.title}
               </span>
               {location === item.title ? (
-                <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-cyan-500/5 via-cyan-500/50 to-cyan-500/5 dark:from-cyan-500/10 dark:via-cyan-500/50 dark:to-cyan-500/10"></span>
+                <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/5 via-blue-500/50 to-blue-500/5 dark:from-blue-500/10 dark:via-blue-500/50 dark:to-blue-500/10"></span>
               ) : null}
             </Link>
           </li>

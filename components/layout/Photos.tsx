@@ -11,11 +11,11 @@ export default function Photos({}: Props) {
           alt=""
           sizes="(min-width: 640px) 18rem, 11rem"
           decoding="async"
-          src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054"
+          src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3840"
           data-nimg="1"
           className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
-          width={3936}
+          width={6000}
           height={2624}
         />
       </div>
@@ -23,7 +23,7 @@ export default function Photos({}: Props) {
         <Image
           alt=""
           sizes="(min-width: 640px) 18rem, 11rem"
-          src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054"
+          src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3840"
           decoding="async"
           data-nimg="1"
           className="absolute inset-0 h-full w-full object-cover"
@@ -36,7 +36,7 @@ export default function Photos({}: Props) {
         <Image
           alt=""
           sizes="(min-width: 640px) 18rem, 11rem"
-          src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054"
+          src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3840"
           decoding="async"
           data-nimg="1"
           className="absolute inset-0 h-full w-full object-cover"

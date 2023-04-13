@@ -1,25 +1,34 @@
 import React, { useEffect } from 'react';
-import { useDarkMode } from 'usehooks-ts';
 
 type Props = {};
 
 export default function DarkModeSwitch({}: Props) {
-  const { isDarkMode, toggle } = useDarkMode();
+  function disableTransitionsTemporarily() {
+    document.documentElement.classList.add('[&_*]:!transition-none');
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('[&_*]:!transition-none');
+    }, 0);
+  }
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const className = 'dark';
-      const bodyClass = window.document.body.classList;
+  function toggleMode() {
+    disableTransitionsTemporarily();
 
-      isDarkMode ? bodyClass.add(className) : bodyClass.remove(className);
+    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    let isSystemDarkMode = darkModeMediaQuery.matches;
+    let isDarkMode = document.documentElement.classList.toggle('dark');
+
+    if (isDarkMode === isSystemDarkMode) {
+      delete window.localStorage.isDarkMode;
+    } else {
+      window.localStorage.isDarkMode = isDarkMode;
     }
-  }, [isDarkMode]);
+  }
 
   return (
     <div className="pointer-events-auto">
       <button
         type="button"
-        onClick={toggle}
+        onClick={toggleMode}
         aria-label="Toggle dark mode"
         className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       >
@@ -30,7 +39,7 @@ export default function DarkModeSwitch({}: Props) {
           strokeLinecap="round"
           strokeLinejoin="round"
           aria-hidden="true"
-          className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-cyan-50 [@media(prefers-color-scheme:dark)]:stroke-cyan-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-cyan-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-cyan-600"
+          className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-blue-50 [@media(prefers-color-scheme:dark)]:stroke-blue-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-blue-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-600"
         >
           <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z"></path>
           <path
@@ -43,7 +52,7 @@ export default function DarkModeSwitch({}: Props) {
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
-          className="hidden h-6 w-6 fill-zinc-700 stroke-cyan-400 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-cyan-300 [@media_not_(prefers-color-scheme:dark)]:fill-cyan-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-cyan-500"
+          className="hidden h-6 w-6 fill-zinc-700 stroke-blue-400 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-300 [@media_not_(prefers-color-scheme:dark)]:fill-blue-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-blue-500"
         >
           <path
             d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"

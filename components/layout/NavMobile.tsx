@@ -41,7 +41,7 @@ export default function NavMobile({ location, isOpen }: Props) {
                 href={item.href}
                 className={classNames(
                   `relative block rounded-3xl px-3 py-2 text-sm tracking-tight transition`,
-                  isActive ? 'bg-cyan-500 text-white dark:bg-cyan-500' : 'hover:text-cyan-500 dark:hover:text-cyan-400'
+                  isActive ? 'bg-blue-500 text-white dark:bg-blue-500' : 'hover:text-blue-500 dark:hover:text-blue-400'
                 )}
               >
                 <span>{item.title}</span>

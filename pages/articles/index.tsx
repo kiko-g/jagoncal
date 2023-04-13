@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import type { ArticleLink } from '@/@types';
-import { Layout } from '../components/layout';
+import { Layout } from '@/components/layout';
 
 type Props = {};
 
@@ -84,7 +84,7 @@ function Article({ article }: ArticleProps) {
           {article.date}
         </time>
         <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">{article.description}</p>
-        <div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-cyan-500">
+        <div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-500">
           Read article
           <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 stroke-current">
             <path
