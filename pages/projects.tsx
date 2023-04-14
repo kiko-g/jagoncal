@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import type { ProjectLink } from '@/@types';
+import type { ProjectLink } from '@/types';
 import { Layout } from '../components/layout';
 
 type Props = {};

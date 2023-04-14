@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import type { ArticleLink } from '@/@types';
+import type { ArticleLink } from '@/types';
 import { Layout } from '@/components/layout';
 import { getAllArticles } from '@/lib/getMdxFiles';
 

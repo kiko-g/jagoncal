@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { TeachingGroup, Course } from '@/@types';
+import { TeachingGroup, Course } from '@/types';
 import { Layout } from '../components/layout';
 
 type Props = {};
