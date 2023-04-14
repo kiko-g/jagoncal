@@ -1,23 +1,9 @@
-import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Prose } from '@/components/layout/Prose'
+import { Prose } from '@/components/article/Prose'
 import { formatDate } from '@/lib/formatDate'
-import Layout from './Layout'
+import Layout from '../layout/Layout'
 
-function ArrowLeftIcon(props) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-export function ArticleLayout({
+export function ArticleTemplate({
   children,
   meta,
   isRssFeed = false,
@@ -30,10 +16,10 @@ export function ArticleLayout({
   }
 
   return (
-    <Layout location={meta.title}>
-      <div className="mt-16 lg:mt-32">
+    <Layout location={meta.title} description={meta.description}>
+      <div className="mt-12 lg:mt-24">
         <div className="xl:relative">
-          <div className="mx-auto max-w-2xl">
+          <div className="mx-auto max-w-3xl">
             {previousPathname && (
               <button
                 type="button"
@@ -63,5 +49,18 @@ export function ArticleLayout({
         </div>
       </div>
     </Layout>
+  )
+}
+
+function ArrowLeftIcon(props) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   )
 }
