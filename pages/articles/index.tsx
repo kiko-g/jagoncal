@@ -9,7 +9,6 @@ type Props = {
 }
 
 export default function Articles({ articles }: Props) {
-  console.log(articles)
   const description = `All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order`
   const articlesFake: ArticleLink[] = [
     {
@@ -36,16 +35,16 @@ export default function Articles({ articles }: Props) {
   ]
 
   return (
-    <Layout location="Articles" description="">
+    <Layout location="Articles" description={description}>
       <div className="relative mt-16 px-4 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl lg:max-w-5xl">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Here are some things I write about varied topics, mostly about
+              geomatics.
             </h1>
             <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              Dumus autem, inquit, non habet in voluptate voluptatem, sed
-              voluptatem in dolore. Duo Reges: constructio interrete.
+              {description}
             </p>
           </div>
 
