@@ -7,6 +7,7 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
     './components/**/*.{js,ts,jsx,tsx,md,mdx}',
   ],
+  plugins: [require('@tailwindcss/typography')],
   theme: {
     extend: {
       colors: {
@@ -29,5 +30,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 }
