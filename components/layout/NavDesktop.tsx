@@ -27,16 +27,16 @@ export default function NavDesktop({ location }: Props) {
   ];
 
   return (
-    <nav className="rounded-full border border-gray-200 bg-gray-50 px-4 dark:border-white/20 dark:bg-white/10">
+    <nav className="rounded-full border border-gray-200 bg-gray-50 px-4 dark:border-white/20 dark:bg-zinc-800">
       <ul className="flex gap-4">
         {navigation.map((item) => (
           <li key={item.title}>
-            <Link href={item.href} className="relative block px-3 py-3 text-sm transition">
+            <Link href={item.href} className="group relative block px-3 py-3 text-sm transition">
               <span
                 className={classNames(
                   location === item.title
-                    ? 'font-medium text-blue-500 hover:opacity-80 dark:text-blue-500'
-                    : 'hover:text-blue-500 dark:hover:text-blue-500'
+                    ? 'font-medium text-blue-500 group-hover:opacity-80 dark:text-blue-500'
+                    : 'group-hover:text-blue-500 dark:group-hover:text-blue-500'
                 )}
               >
                 {item.title}

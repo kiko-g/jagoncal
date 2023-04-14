@@ -26,14 +26,14 @@ export default function Teaching({}: Props) {
           name: 'Photogrammetry',
           timeSpan: '2009 - Now',
           description:
-            'General knowledge of photogrammetryc concepts, with emphasis on digital photogrammetry, and focused on cartography and geographical information.',
+            'General knowledge of photogrammetryc concepts, with emphasis on digital photogrammetry, and focused on cartography and geographical information (Master in Surveying Engineering).',
           url: 'https://sigarra.up.pt/fcup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=499623',
         },
         {
           name: 'Cartography',
           timeSpan: '2009 - Now',
           description:
-            'Main concepts of reference systems involved in map production and the cartographic representation methods, both traditional and digital.',
+            'Main concepts of reference systems involved in map production and the cartographic representation methods, both traditional and digital (Master in Remote Sensing).',
           url: 'https://sigarra.up.pt/fcup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=499605',
         },
       ],

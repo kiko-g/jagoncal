@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import './prism.css';
 
+*::selection {
+  @apply bg-blue-500/50 text-white;
+}
+
 html {
   @apply scroll-smooth;
 }

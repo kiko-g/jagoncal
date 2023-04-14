@@ -2,10 +2,15 @@ import React from 'react';
 import Link from 'next/link';
 import type { ArticleLink } from '@/@types';
 import { Layout } from '@/components/layout';
+import { getAllArticles } from '@/lib/getMdxFiles';
 
-type Props = {};
+type Props = {
+  articles2: any;
+};
 
-export default function Articles({}: Props) {
+export default function Articles({ articles2 }: Props) {
+  console.log(articles2);
+  const description = `All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order`;
   const articles: ArticleLink[] = [
     {
       title: 'Quasi architecto beatae vitae dicta',
@@ -31,7 +36,7 @@ export default function Articles({}: Props) {
   ];
 
   return (
-    <Layout location="Articles">
+    <Layout location="Articles" description="">
       <div className="relative mt-16 px-4 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl lg:max-w-5xl">
           <div className="max-w-2xl">
@@ -87,12 +92,7 @@ function Article({ article }: ArticleProps) {
         <div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-500">
           Read article
           <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" className="ml-1 h-4 w-4 stroke-current">
-            <path
-              d="M6.75 5.75 9.25 8l-2.5 2.25"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
+            <path d="M6.75 5.75 9.25 8l-2.5 2.25" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
           </svg>
         </div>
       </div>
@@ -104,4 +104,12 @@ function Article({ article }: ArticleProps) {
       </time>
     </article>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
+    },
+  };
 }
