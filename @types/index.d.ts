@@ -12,14 +12,14 @@ export type ProjectLink = {
   domain: string;
 };
 
-export type TeachingGroupLink = {
-  title: string;
-  courses: CourseLink[];
+export type TeachingGroup = {
+  title: React.ReactNode;
+  courses: Course[];
 };
 
-export type CourseLink = {
+export type Course = {
   name: string;
-  title: string;
+  timeSpan: string;
   description: string;
   url: string;
 };
