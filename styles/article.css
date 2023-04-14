@@ -2,10 +2,6 @@
   @apply my-3;
 }
 
-.article h1 {
-  @apply mb-4 mt-6 text-3xl font-bold md:text-4xl;
-}
-
 .article h2 {
   @apply mb-3 mt-5 text-2xl font-bold md:text-3xl;
 }

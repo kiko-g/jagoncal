@@ -44,18 +44,19 @@ export default function Projects({}: Props) {
     },
   ]
 
+  const headline = 'Projects and Research'
+  const description = `Main areas of interest in the application of Photogrammetry and high resolution mapping to environmental monitoring. Interest also in the integration of GNSS, inertial navigation and video for mobile mapping.`
+
   return (
     <Layout location="Projects">
       <div className="relative mt-16 px-4 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl lg:max-w-5xl">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Sed aliquet aliquet nibh et iaculis.
+              {headline}
             </h1>
             <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              Quisque vulputate est id magna feugiat congue. Proin eget orci eu
-              leo tincidunt viverra id in leo. Sed sed lectus at dolor sagittis
-              convallis.
+              {description}
             </p>
           </div>
 
