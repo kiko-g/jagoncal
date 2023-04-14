@@ -31,15 +31,18 @@ export default function NavDesktop({ location }: Props) {
       <ul className="flex gap-4">
         {navigation.map((item) => (
           <li key={item.title}>
-            <Link
-              href={item.href}
-              className="relative block px-3 py-3 text-sm transition hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              <span className={classNames(location === item.title ? 'text-blue-500 dark:text-blue-400' : '')}>
+            <Link href={item.href} className="relative block px-3 py-3 text-sm transition">
+              <span
+                className={classNames(
+                  location === item.title
+                    ? 'font-medium text-blue-500 hover:opacity-80 dark:text-blue-500'
+                    : 'hover:text-blue-500 dark:hover:text-blue-500'
+                )}
+              >
                 {item.title}
               </span>
               {location === item.title ? (
-                <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/5 via-blue-500/50 to-blue-500/5 dark:from-blue-500/10 dark:via-blue-500/50 dark:to-blue-500/10"></span>
+                <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/5 via-blue-500/50 to-blue-500/5 dark:from-blue-500/20 dark:via-blue-500/80 dark:to-blue-500/20"></span>
               ) : null}
             </Link>
           </li>
