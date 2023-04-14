@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Layout, Photos } from '../components/layout';
-import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Layout, Photos } from '../components/layout'
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 
 const links = [
   {
@@ -93,7 +93,7 @@ const links = [
       <EnvelopeIcon className="h-6 w-6 text-zinc-500 transition group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-zinc-300" />
     ),
   },
-];
+]
 
 export default function Home() {
   return (
@@ -115,11 +115,14 @@ export default function Home() {
           </h1>
 
           <p className="mt-6 text-base leading-8 text-zinc-600 dark:text-zinc-400">
-            I&apos;m José Gonçalves, a lecturer in the Faculty of Science of the University of Porto (FCUP), Department
-            of Geosciences, Enviroment and Land Planning (DGAOT), and a researcher at CIIMAR (Interdisciplinary Centre
-            of Marine and Environmental Research), in the Coastal Monitoring and Management Group. I hold a Ph.D. in
-            Photogrammetry (2001) and a MSc in GIS (1993) from University College London, Department of Geomatic
-            Engineering and a degree in Surveying Engineering from FCUP.
+            I&apos;m José Gonçalves, a lecturer in the Faculty of Science of the
+            University of Porto (FCUP), Department of Geosciences, Enviroment
+            and Land Planning (DGAOT), and a researcher at CIIMAR
+            (Interdisciplinary Centre of Marine and Environmental Research), in
+            the Coastal Monitoring and Management Group. I hold a Ph.D. in
+            Photogrammetry (2001) and a MSc in GIS (1993) from University
+            College London, Department of Geomatic Engineering and a degree in
+            Surveying Engineering from FCUP.
           </p>
 
           <ul className="mt-6 flex gap-6">
@@ -136,5 +139,5 @@ export default function Home() {
         </div>
       </article>
     </Layout>
-  );
+  )
 }

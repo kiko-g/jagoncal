@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript } from 'next/document'
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -33,21 +33,30 @@ const modeScript = `
     disableTransitionsTemporarily()
     updateMode()
   }
-`;
+`
 
-const siteDomain = process.env.NEXT_PUBLIC_SITE_URL || 'https://jagoncal.vercel.app';
+const siteDomain =
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://jagoncal.vercel.app'
 
 export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
       <Head />
       <script dangerouslySetInnerHTML={{ __html: modeScript }} />
-      <link rel="alternate" type="application/rss+xml" href={`${siteDomain}/rss/feed.xml`} />
-      <link rel="alternate" type="application/feed+json" href={`${siteDomain}/rss/feed.json`} />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        href={`${siteDomain}/rss/feed.xml`}
+      />
+      <link
+        rel="alternate"
+        type="application/feed+json"
+        href={`${siteDomain}/rss/feed.json`}
+      />
       <body>
         <Main />
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }

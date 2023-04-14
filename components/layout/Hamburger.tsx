@@ -1,12 +1,12 @@
-import React from 'react';
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import React from 'react'
+import { Bars3Icon } from '@heroicons/react/24/outline'
 
 type Props = {
-  openStateHook: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
-};
+  openStateHook: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+}
 
 export default function Hamburger({ openStateHook }: Props) {
-  const [open, setOpen] = openStateHook;
+  const [open, setOpen] = openStateHook
 
   return (
     <button
@@ -15,5 +15,5 @@ export default function Hamburger({ openStateHook }: Props) {
     >
       <Bars3Icon className="h-6 w-6 fill-blue-500 stroke-blue-500 transition group-hover:fill-zinc-600 group-hover:stroke-blue-600" />
     </button>
-  );
+  )
 }

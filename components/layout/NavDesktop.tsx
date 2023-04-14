@@ -1,10 +1,10 @@
-import classNames from 'classnames';
-import Link from 'next/link';
-import React from 'react';
+import React from 'react'
+import Link from 'next/link'
+import clsx from 'clsx'
 
 type Props = {
-  location: string;
-};
+  location: string
+}
 
 export default function NavDesktop({ location }: Props) {
   const navigation = [
@@ -24,16 +24,19 @@ export default function NavDesktop({ location }: Props) {
       title: 'Teaching',
       href: '/teaching',
     },
-  ];
+  ]
 
   return (
     <nav className="rounded-full border border-gray-200 bg-gray-50 px-4 dark:border-white/20 dark:bg-zinc-800">
       <ul className="flex gap-4">
         {navigation.map((item) => (
           <li key={item.title}>
-            <Link href={item.href} className="group relative block px-3 py-3 text-sm transition">
+            <Link
+              href={item.href}
+              className="group relative block px-3 py-3 text-sm transition"
+            >
               <span
-                className={classNames(
+                className={clsx(
                   location === item.title
                     ? 'font-medium text-blue-500 group-hover:opacity-80 dark:text-blue-500'
                     : 'group-hover:text-blue-500 dark:group-hover:text-blue-500'
@@ -49,5 +52,5 @@ export default function NavDesktop({ location }: Props) {
         ))}
       </ul>
     </nav>
-  );
+  )
 }

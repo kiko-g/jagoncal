@@ -2,7 +2,7 @@ import glob from 'fast-glob'
 import * as path from 'path'
 
 interface Article {
-  date: string;
+  date: string
 }
 
 async function importArticle(articleFilename: string) {
@@ -24,7 +24,6 @@ export async function getAllArticles() {
   let articles = await Promise.all(articleFilenames.map(importArticle))
 
   return articles.sort((a: Article, z: Article) => {
-    return new Date(z.date).getTime() - new Date(a.date).getTime();
-  });
+    return new Date(z.date).getTime() - new Date(a.date).getTime()
+  })
 }
-

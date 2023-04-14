@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from 'next/image'
+import React from 'react'
 
-type Props = {};
+type Props = {}
 
 export default function Photos({}: Props) {
   return (
@@ -46,5 +46,5 @@ export default function Photos({}: Props) {
         />
       </div>
     </div>
-  );
+  )
 }

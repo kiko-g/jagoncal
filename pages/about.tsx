@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { Layout } from '../components/layout';
-import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import clsx from 'clsx'
+import { Layout } from '../components/layout'
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 
 const links = [
   {
@@ -94,9 +94,9 @@ const links = [
       <EnvelopeIcon className="h-6 w-6 text-zinc-500 transition group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-zinc-300" />
     ),
   },
-];
+]
 
-type Props = {};
+type Props = {}
 
 export default function About({}: Props) {
   return (
@@ -121,35 +121,46 @@ export default function About({}: Props) {
             </div>
             <div className="lg:order-first lg:row-span-2">
               <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                I&apos;m José Gonçalves. I live in Porto, where I do most of my work.
+                I&apos;m José Gonçalves. I live in Porto, where I do most of my
+                work.
               </h1>
               <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus malesuada nibh, eget molestie
-                  elit feugiat sit amet. Vestibulum porta gravida mauris id pellentesque. Sed vitae est lacinia,
-                  tincidunt metus sit amet, molestie est. Nulla porttitor, augue id dignissim commodo, nunc lectus
-                  tempus arcu, ac egestas nisi justo id lectus. Cras iaculis enim quis orci iaculis, eu pharetra ante
-                  cursus.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam finibus malesuada nibh, eget molestie elit feugiat sit
+                  amet. Vestibulum porta gravida mauris id pellentesque. Sed
+                  vitae est lacinia, tincidunt metus sit amet, molestie est.
+                  Nulla porttitor, augue id dignissim commodo, nunc lectus
+                  tempus arcu, ac egestas nisi justo id lectus. Cras iaculis
+                  enim quis orci iaculis, eu pharetra ante cursus.
                 </p>
                 <p>
-                  Quisque vulputate est id magna feugiat congue. Proin eget orci eu leo tincidunt viverra id in leo. Sed
-                  sed lectus at dolor sagittis convallis. Maecenas nisi mauris, tempus non pulvinar ut, cursus non
-                  justo. Nunc tincidunt, eros quis placerat pretium, purus neque egestas libero, eu ultrices felis diam
-                  eu turpis. Fusce vestibulum quis enim quis dictum. Sed gravida pharetra rhoncus. Sed dignissim eget
-                  nisl eu ultricies. Donec ornare elit a pulvinar malesuada. Ut id egestas magna. Praesent tincidunt
-                  nibh vitae hendrerit luctus.
+                  Quisque vulputate est id magna feugiat congue. Proin eget orci
+                  eu leo tincidunt viverra id in leo. Sed sed lectus at dolor
+                  sagittis convallis. Maecenas nisi mauris, tempus non pulvinar
+                  ut, cursus non justo. Nunc tincidunt, eros quis placerat
+                  pretium, purus neque egestas libero, eu ultrices felis diam eu
+                  turpis. Fusce vestibulum quis enim quis dictum. Sed gravida
+                  pharetra rhoncus. Sed dignissim eget nisl eu ultricies. Donec
+                  ornare elit a pulvinar malesuada. Ut id egestas magna.
+                  Praesent tincidunt nibh vitae hendrerit luctus.
                 </p>
                 <p>
-                  Praesent egestas magna vitae arcu efficitur auctor. Quisque non pharetra tellus. Cras egestas varius
-                  magna, et porttitor felis dictum eu. Proin vehicula tristique elit, non sagittis tortor aliquet sit
-                  amet. Donec pharetra pellentesque dui in facilisis. Aenean porttitor eros nibh, at commodo neque
-                  mollis imperdiet. In tempus ultricies odio, eget interdum felis euismod sollicitudin.
+                  Praesent egestas magna vitae arcu efficitur auctor. Quisque
+                  non pharetra tellus. Cras egestas varius magna, et porttitor
+                  felis dictum eu. Proin vehicula tristique elit, non sagittis
+                  tortor aliquet sit amet. Donec pharetra pellentesque dui in
+                  facilisis. Aenean porttitor eros nibh, at commodo neque mollis
+                  imperdiet. In tempus ultricies odio, eget interdum felis
+                  euismod sollicitudin.
                 </p>
                 <p>
-                  Sed aliquet aliquet nibh et iaculis. Cras nulla augue, commodo a auctor in, fermentum ut lectus.
-                  Praesent nec ligula quis urna feugiat consequat eu ac enim. Quisque tristique arcu ac interdum
-                  feugiat. Suspendisse pellentesque risus id sapien condimentum rhoncus. Etiam tristique lorem quis
-                  justo semper, eget vulputate purus semper.
+                  Sed aliquet aliquet nibh et iaculis. Cras nulla augue, commodo
+                  a auctor in, fermentum ut lectus. Praesent nec ligula quis
+                  urna feugiat consequat eu ac enim. Quisque tristique arcu ac
+                  interdum feugiat. Suspendisse pellentesque risus id sapien
+                  condimentum rhoncus. Etiam tristique lorem quis justo semper,
+                  eget vulputate purus semper.
                 </p>
               </div>
             </div>
@@ -160,9 +171,11 @@ export default function About({}: Props) {
                 {links.map((link, linkIdx) => (
                   <li
                     key={link.name}
-                    className={classNames(
+                    className={clsx(
                       'flex',
-                      linkIdx === links.length - 1 ? 'mt-4 border-t border-zinc-100 pt-8 dark:border-zinc-700/40' : ''
+                      linkIdx === links.length - 1
+                        ? 'mt-4 border-t border-zinc-100 pt-8 dark:border-zinc-700/40'
+                        : ''
                     )}
                   >
                     <Link
@@ -186,5 +199,5 @@ export default function About({}: Props) {
         </div>
       </div>
     </Layout>
-  );
+  )
 }

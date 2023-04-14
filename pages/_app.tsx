@@ -1,10 +1,10 @@
-import '@/styles/globals.css';
-import type { AppProps } from 'next/app';
-import { Fira_Code, Inter, Lexend } from 'next/font/google';
+import '@/styles/globals.css'
+import type { AppProps } from 'next/app'
+import { Fira_Code, Inter, Lexend } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] });
-const lexend = Lexend({ subsets: ['latin'] });
-const firaCode = Fira_Code({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] })
+const lexend = Lexend({ subsets: ['latin'] })
+const firaCode = Fira_Code({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -20,5 +20,5 @@ export default function App({ Component, pageProps }: AppProps) {
       </style>
       <Component {...pageProps} />
     </>
-  );
+  )
 }

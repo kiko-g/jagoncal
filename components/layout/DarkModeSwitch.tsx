@@ -1,26 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
-type Props = {};
+type Props = {}
 
 export default function DarkModeSwitch({}: Props) {
   function disableTransitionsTemporarily() {
-    document.documentElement.classList.add('[&_*]:!transition-none');
+    document.documentElement.classList.add('[&_*]:!transition-none')
     window.setTimeout(() => {
-      document.documentElement.classList.remove('[&_*]:!transition-none');
-    }, 0);
+      document.documentElement.classList.remove('[&_*]:!transition-none')
+    }, 0)
   }
 
   function toggleMode() {
-    disableTransitionsTemporarily();
+    disableTransitionsTemporarily()
 
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    let isSystemDarkMode = darkModeMediaQuery.matches;
-    let isDarkMode = document.documentElement.classList.toggle('dark');
+    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    let isSystemDarkMode = darkModeMediaQuery.matches
+    let isDarkMode = document.documentElement.classList.toggle('dark')
 
     if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode;
+      delete window.localStorage.isDarkMode
     } else {
-      window.localStorage.isDarkMode = isDarkMode;
+      window.localStorage.isDarkMode = isDarkMode
     }
   }
 
@@ -63,5 +63,5 @@ export default function DarkModeSwitch({}: Props) {
         </svg>
       </button>
     </div>
-  );
+  )
 }

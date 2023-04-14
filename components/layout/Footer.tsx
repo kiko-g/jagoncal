@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from 'next/link'
+import React from 'react'
 
-type Props = {};
+type Props = {}
 
 const navigation = [
   {
@@ -24,12 +24,12 @@ const navigation = [
     title: 'Teaching',
     href: '/teaching',
   },
-];
+]
 
 export default function Footer({}: Props) {
   return (
     <footer className="mt-32">
-      <div className="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
+      <div className="border-t border-zinc-100 pb-16 pt-10 dark:border-zinc-700/40">
         <div className="relative mx-4 sm:mx-8 lg:mx-12">
           <div className="mx-auto max-w-2xl lg:max-w-5xl">
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
@@ -52,5 +52,5 @@ export default function Footer({}: Props) {
         </div>
       </div>
     </footer>
-  );
+  )
 }

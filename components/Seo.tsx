@@ -1,15 +1,17 @@
-import React from 'react';
-import Head from 'next/head';
+import React from 'react'
+import Head from 'next/head'
 
 type Props = {
-  location: string;
-  description?: string;
-};
+  location: string
+  description?: string
+}
 
 export default function Seo({ location, description }: Props) {
-  const siteTitle = `${location} - José Gonçalves`;
-  const author = `kikogoncalves`;
-  const desc = description || `José Gonçalves' website. Find out more about my projects, articles and work.`;
+  const siteTitle = `${location} - José Gonçalves`
+  const author = `kikogoncalves`
+  const desc =
+    description ||
+    `José Gonçalves' website. Find out more about my projects, articles and work.`
   const meta = [
     {
       name: `description`,
@@ -43,7 +45,7 @@ export default function Seo({ location, description }: Props) {
       name: `twitter:description`,
       content: desc,
     },
-  ];
+  ]
 
   return (
     <Head>
@@ -55,5 +57,5 @@ export default function Seo({ location, description }: Props) {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-  );
+  )
 }
