@@ -1,4 +1,5 @@
 export type ArticleLink = {
+  slug: string
   author: string
   date: string
   title: string
