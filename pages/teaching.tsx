@@ -52,18 +52,19 @@ export default function Teaching({}: Props) {
     },
   ]
 
+  const headline = 'Teaching Experience'
+  const description = `Here are some courses I've either taught or still teach across different faculties of the University of Porto, but mainly in the Faculty of Sciences. I teach in the areas of Photogrammetry, Topographic Cartography and Geographic Information Systems (Bachelor in Geospatial Engineering, Master in Surveying Engineering and Master in Remote Sensing).`
+
   return (
     <Layout location="Teaching">
       <div className="relative mt-16 px-4 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl lg:max-w-5xl">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Teaching experience
+              {headline}
             </h1>
             <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              Here are some courses I&apos;ve either taught or still teach
-              across different faculties of the University of Porto, but mainly
-              in the Faculty of Sciences.
+              {description}
             </p>
           </div>
 
