@@ -1,8 +1,9 @@
 export type ArticleLink = {
+  author: string
   date: string
   title: string
   description: string
-  url: string
+  href: string
 }
 
 export type ProjectLink = {

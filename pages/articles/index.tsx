@@ -5,34 +5,15 @@ import { Layout } from '@/components/layout'
 import { getAllArticles } from '@/lib/getMdxFiles'
 
 type Props = {
-  articles: any
+  articles: ArticleLink[]
+}
+
+type ArticleProps = {
+  article: ArticleLink
 }
 
 export default function Articles({ articles }: Props) {
   const description = `All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order`
-  const articlesFake: ArticleLink[] = [
-    {
-      title: 'Quasi architecto beatae vitae dicta',
-      date: 'September 21, 2022',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim justo blandit, bibendum risus a, hendrerit dolor. Nam diam diam, efficitur et nulla eget, varius faucibus enim. Donec sem eros.',
-      url: '/articles/lorem-ipsum-dolor-sit-amet',
-    },
-    {
-      title: 'Itaque earum rerum hic tenetur a sapiente delectus',
-      date: 'October 28, 2022',
-      description:
-        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.',
-      url: '/articles/lorem-ipsum-dolor-sit-amet',
-    },
-    {
-      title: 'Finibus Bonorum et Malorum',
-      date: 'November 15, 2022',
-      description:
-        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-      url: '/articles/lorem-ipsum-dolor-sit-amet',
-    },
-  ]
 
   return (
     <Layout location="Articles" description={description}>
@@ -51,7 +32,7 @@ export default function Articles({ articles }: Props) {
           <div className="mt-16 sm:mt-20">
             <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
               <div className="flex max-w-3xl flex-col space-y-16">
-                {articlesFake.map((article, articleIdx) => (
+                {articles.map((article, articleIdx) => (
                   <Article key={`article-${articleIdx}`} article={article} />
                 ))}
               </div>
@@ -63,17 +44,13 @@ export default function Articles({ articles }: Props) {
   )
 }
 
-type ArticleProps = {
-  article: ArticleLink
-}
-
 function Article({ article }: ArticleProps) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <div className="group relative flex flex-col items-start md:col-span-3">
         <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
           <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-          <Link href={article.url}>
+          <Link href={`articles${article.href}`}>
             <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
             <span className="relative z-10">{article.title}</span>
           </Link>
