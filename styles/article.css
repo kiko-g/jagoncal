@@ -1,0 +1,31 @@
+.article p {
+  @apply my-3;
+}
+
+.article h2 {
+  @apply mb-3 mt-5 text-2xl font-bold md:text-3xl;
+}
+
+.article h3 {
+  @apply mb-2 mt-4 text-xl font-semibold md:text-2xl;
+}
+
+.article h4 {
+  @apply mb-2 mt-3 text-lg font-semibold md:text-xl;
+}
+
+.article h5 {
+  @apply mb-2 mt-3 text-base font-medium md:text-lg;
+}
+
+.article h6 {
+  @apply mb-2 mt-3 text-sm font-medium md:text-base;
+}
+
+.article ul {
+  @apply my-2 list-inside list-disc;
+}
+
+.article ol {
+  @apply my-2 list-inside list-decimal;
+}

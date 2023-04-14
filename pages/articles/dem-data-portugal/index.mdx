@@ -1,0 +1,24 @@
+import { ArticleTemplate } from '@/components/article/Template'
+import Link from 'next/link'
+import Image from 'next/image'
+
+export const meta = {
+  author: 'José Gonçalves',
+  date: '2023-05-02',
+  title: 'Digital Elevation Model (DEM) Data for Portugal',
+  description: 'This is where you describe and summarize your article post.',
+}
+
+export default (props) => <ArticleTemplate meta={meta} {...props} />
+
+## Digital Elevation Model (DEM) Data for Portugal
+
+The [links below](#Download) contain digital elevation models for Portugal Continental, obtained from satellite missions: SRTM, ASTER, ALOS-Prism and TerraSAR-X. These data are open, but if used should be referenced to their origin (NASA, JAXA, DLR) and this web page regarding the preparation of data for Portugal Continental. See below details about the original data.
+
+The cells of 1 degree of the area between (10W,36N) and (6W,43N) were combined into a continuous raster. Small groups of empty pixels were filled by interpolation using the GDAL_FILLNODATA command. The raster was projected to the national coordinate system in the PT-TM06 projection of the ETRS89 datum (EPSG:3763) using the GDALWARP command, with a 25 meter pixel (the 1" lat-long pixel has the dimension, at latitude 39d40'N, of 30.84 m by 23.84 m).
+
+The pixel values were obtained by bilinear resampling. In the case of TerraSAR-X, with a resolution of 3" in geographic coordinates, the projected pixel was chosen with the dimension 80 m. All altitudes are above sea level. The boundary coordinates of the projected rasters were chosen as integer numbers in kilometers: (-120, 302) to (164, 278). At this resolution ETRS89 and WGS84 were considered coincident.
+
+All rasters are in the GeoTiff format, as 16-bit integers, "deflate" compression, with internal "tiles" and "overviews", starting at level 4.
+
+## Download

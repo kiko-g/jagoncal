@@ -1,23 +1,18 @@
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,md,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,md,mdx}',
+  ],
+  plugins: [require('@tailwindcss/typography')],
   theme: {
     extend: {
       colors: {
-        primary: '#0d9488',
-        secondary: '#3b82f6',
-        navy: '#0f1419',
-        dark: '#242936',
-        darker: '#1e222c',
-        darkest: '#1a1e28',
-        darkish: '#333640',
+        dark: '#0f1419',
         light: '#f2f4f7',
-        lighter: '#f7f7f7',
-        lightest: '#fcfcfc',
-        lightish: '#ebedf0',
       },
       maxWidth: {
         screen: '100vw',
@@ -35,5 +30,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-};
+}

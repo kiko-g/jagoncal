@@ -1,0 +1,63 @@
+import { ArticleTemplate } from '@/components/article/Template'
+import Link from 'next/link'
+import Image from 'next/image'
+import Map1 from './images/fig1_d73_etrs89.gif'
+import Map2 from './images/fig2_dlx_etrs89.gif'
+import WebInterface from './images/interface2.png'
+
+export const meta = {
+  author: 'José Gonçalves',
+  date: '2023-05-01',
+  title: 'Coordinate Transformations in Portugal',
+  description: 'This is where you describe and summarize your article post.',
+}
+
+export default (props) => <ArticleTemplate meta={meta} {...props} />
+
+## Datum transformation grids in NTV2 format
+
+The datum transformations, between a local datum and a global datum, are often performed by the Bursa-Wolf transformation, based on translation, rotation and scale over geocentric cartesian coordinates. These transformations are approximate, often involving errors of a few meters, not modeling deformations of the geodetic network, which defines the local system. The following figures show the differences in geodetic coordinates in seconds of datum 73 to ETRS89 and of datum Lisbon to ETRS89. The deformations are greater in the case of the Lisbon datum
+
+<div className="my-8 space-y-6">
+  <Image
+    src={Map1}
+    alt="Datum 73 to ETRS89"
+    className="rounded object-cover shadow-xl"
+  />
+  <Image
+    src={Map2}
+    alt="Datum Lisbon to ETRS89"
+    className="rounded object-cover shadow-xl"
+  />
+</div>
+
+The Portuguese Geodetic Institute (_Direção Geral do Território_, DGT in Portuguese) has observed about 1600 geodetic vertices in Portugal Continental. With this information and the geographic coordinates in the old systems it was possible to determine grids of coordinate differences to ETRS89, of datum 73, datum Lisbon (Hayford ellipsoid), European Datum 1950 and datum Lisbon (Bessel ellipsoid). A grid with a spacing of 0.1 degrees was used, which is sufficient to model the differences and does not excessively
+bias the points that have the largest errors.
+
+More information about the generation of grids can be found in the following article of the CNCG2009 The grid files can be downloaded at: NTV2 grids for Portugal (José Alberto Gonçalves).
+
+The ZIP file contains the grids of the four old systems and a grid of the national geoid undulation (GeodPT08). It also contains a projection configuration file for use with the PROJ program. The DGT grids, with a spacing of 0.02 degrees, can also be used for datum 73 and datum Lisbon.
+
+## Coordinate transformation with the PROJ program
+
+TBD
+
+## Transforming raster and vector files with GDAL software
+
+TBD
+
+## Web interface for coordinate transformations
+
+Click the image below to access an external interface, a coordinate transformation service developed by André Pinhal, a PhD student at FCUP, which uses grids to make several coordinate transformations. The transformation can be applied to individual points in the interface, or to text files. It also includes altitude transformation with the national geoid undulation model (GeodPT08). The interface also allows you to calculate values of deformation of the projections.
+
+<Link
+  target="_blank"
+  href="https://www.apinhal.pt/ProjGridTransform/"
+  className="group block rounded transition hover:opacity-60"
+>
+  <Image
+    src={WebInterface}
+    alt="Web interface for coordinate transformations"
+    className="rounded object-cover shadow-xl"
+  />
+</Link>

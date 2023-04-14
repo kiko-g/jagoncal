@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { Layout } from '../components/layout';
-import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import clsx from 'clsx'
+import { Layout } from '../components/layout'
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 
 const links = [
   {
@@ -14,7 +14,7 @@ const links = [
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
-        className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-700 dark:fill-zinc-400 dark:group-hover:fill-zinc-200"
       >
         <path
           fillRule="evenodd"
@@ -32,7 +32,7 @@ const links = [
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
-        className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-700 dark:fill-zinc-400 dark:group-hover:fill-zinc-200"
       >
         <path d="M18.335 18.339H15.67v-4.177c0-.996-.02-2.278-1.39-2.278-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V9.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387 2.7 0 3.2 1.778 3.2 4.091v4.715zM7.003 8.575a1.546 1.546 0 01-1.548-1.549 1.548 1.548 0 111.547 1.549zm1.336 9.764H5.666V9.75H8.34v8.589zM19.67 3H4.329C3.593 3 3 3.58 3 4.297v15.406C3 20.42 3.594 21 4.328 21h15.338C20.4 21 21 20.42 21 19.703V4.297C21 3.58 20.4 3 19.666 3h.003z"></path>
       </svg>
@@ -46,7 +46,7 @@ const links = [
       <svg
         aria-hidden="true"
         viewBox="0 0 256 256"
-        className="h-6 w-6 fill-zinc-500 p-[1px] transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        className="h-6 w-6 fill-zinc-500 p-[1px] transition group-hover:fill-zinc-700 dark:fill-zinc-400 dark:group-hover:fill-zinc-200"
       >
         <path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z" />
         <path
@@ -64,7 +64,7 @@ const links = [
       <svg
         aria-hidden="true"
         viewBox="0 0 48 48"
-        className="h-6 w-6 rounded fill-zinc-500 p-[1px] transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        className="h-6 w-6 rounded fill-zinc-500 p-[1px] transition group-hover:fill-zinc-700 dark:fill-zinc-400 dark:group-hover:fill-zinc-200"
       >
         <path d="M15.5 2.8C6.5 7 1.6 14.4 1.5 24c0 5.7.4 7.1 3.3 11.5 6.4 9.9 18.4 13.5 28.5 8.6 5.5-2.6 5.7-2.6 5.7.4 0 2.2.4 2.5 4 2.5h4V34.7c0-13.3-.9-18.1-4.6-23.6-5.6-8.5-18.2-12.4-26.9-8.3zm17 8.6c6.8 5.3 8.4 13.7 3.6 20.3-4.9 6.8-12 8.9-18.8 5.7-10.4-5-11.3-20.1-1.7-26.5 4.4-2.9 12.8-2.6 16.9.5z" />
       </svg>
@@ -78,7 +78,7 @@ const links = [
       <svg
         aria-hidden="true"
         viewBox="0 0 160 160"
-        className="h-6 w-6 rounded fill-zinc-500 p-[2px] transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        className="h-6 w-6 rounded fill-zinc-500 p-[2px] transition group-hover:fill-zinc-700 dark:fill-zinc-400 dark:group-hover:fill-zinc-200"
       >
         <path d="M0 80v80h160V0H0v80zm143-69.7c3 1.6 5.1 3.7 6.7 6.7l2.3 4.3v117.4l-2.3 4.3c-1.6 3-3.7 5.1-6.7 6.7-4.3 2.3-5 2.3-26.9 2.1l-22.6-.3-.3-70.5c-.1-38.8 0-71.1.3-71.8.3-.9 5.8-1.2 22.8-1.2 21.4 0 22.6.1 26.7 2.3zM45 60c0 .5-1.1 1-2.5 1-1.5 0-2.9.8-3.6 2.1-1.5 2.9-.8 34.6.9 37.6 1.9 3.4 7.9 4.9 12.4 3 6.4-2.7 7.2-5 7.6-22.1.4-17.1-.3-20.6-4.3-20.6-1.4 0-2.5-.5-2.5-1 0-.6 3.3-1 8-1s8 .4 8 1c0 .5-.8 1-1.9 1-1 0-2.3.6-2.9 1.2-.5.7-1.2 8.7-1.4 17.8-.3 14.3-.6 17-2.3 20-4.3 7.5-16.6 10.3-25.5 5.7-7.2-3.6-8-6.2-8-25.8 0-17.1-.4-18.9-4.2-18.9-1 0-1.8-.5-1.8-1 0-.6 4.7-1 12-1s12 .4 12 1zm38.7 38.2c2.1 2.7 2.1 4.7.2 7.2-2.3 3-5.4 3.3-8.1.9-2-1.8-2.4-6.3-.6-8.1 1.6-1.6 7.3-1.5 8.5 0z" />
         <path d="M103.8 60.5 107 62v42.1l-3.2 1.4c-3.1 1.3-2.4 1.4 9.2 1.4 8.7-.1 11.6-.3 9.6-.9-1.6-.5-3.3-1.5-3.7-2.2-.5-.7-.9-5.2-.9-10.1V85h5.3c6 0 12.7-2.7 15.1-6.1 2-2.9 2.1-9.1.1-12.8-2.6-5.1-7.3-6.4-23.5-6.8-13.5-.3-14.3-.2-11.2 1.2zM126 64c2.5 2.5 3.4 6.1 2.7 10.7-.8 4.5-3.4 7.3-7.3 7.6l-2.9.2-.3-10.3-.3-10.2h3.1c1.7 0 3.9.9 5 2z" />
@@ -94,9 +94,9 @@ const links = [
       <EnvelopeIcon className="h-6 w-6 text-zinc-500 transition group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-zinc-300" />
     ),
   },
-];
+]
 
-type Props = {};
+type Props = {}
 
 export default function About({}: Props) {
   return (
@@ -121,35 +121,46 @@ export default function About({}: Props) {
             </div>
             <div className="lg:order-first lg:row-span-2">
               <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                I&apos;m José Gonçalves. I live in Porto, where I do most of my work.
+                I&apos;m José Gonçalves. I live in Porto, where I do most of my
+                work.
               </h1>
               <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus malesuada nibh, eget molestie
-                  elit feugiat sit amet. Vestibulum porta gravida mauris id pellentesque. Sed vitae est lacinia,
-                  tincidunt metus sit amet, molestie est. Nulla porttitor, augue id dignissim commodo, nunc lectus
-                  tempus arcu, ac egestas nisi justo id lectus. Cras iaculis enim quis orci iaculis, eu pharetra ante
-                  cursus.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam finibus malesuada nibh, eget molestie elit feugiat sit
+                  amet. Vestibulum porta gravida mauris id pellentesque. Sed
+                  vitae est lacinia, tincidunt metus sit amet, molestie est.
+                  Nulla porttitor, augue id dignissim commodo, nunc lectus
+                  tempus arcu, ac egestas nisi justo id lectus. Cras iaculis
+                  enim quis orci iaculis, eu pharetra ante cursus.
                 </p>
                 <p>
-                  Quisque vulputate est id magna feugiat congue. Proin eget orci eu leo tincidunt viverra id in leo. Sed
-                  sed lectus at dolor sagittis convallis. Maecenas nisi mauris, tempus non pulvinar ut, cursus non
-                  justo. Nunc tincidunt, eros quis placerat pretium, purus neque egestas libero, eu ultrices felis diam
-                  eu turpis. Fusce vestibulum quis enim quis dictum. Sed gravida pharetra rhoncus. Sed dignissim eget
-                  nisl eu ultricies. Donec ornare elit a pulvinar malesuada. Ut id egestas magna. Praesent tincidunt
-                  nibh vitae hendrerit luctus.
+                  Quisque vulputate est id magna feugiat congue. Proin eget orci
+                  eu leo tincidunt viverra id in leo. Sed sed lectus at dolor
+                  sagittis convallis. Maecenas nisi mauris, tempus non pulvinar
+                  ut, cursus non justo. Nunc tincidunt, eros quis placerat
+                  pretium, purus neque egestas libero, eu ultrices felis diam eu
+                  turpis. Fusce vestibulum quis enim quis dictum. Sed gravida
+                  pharetra rhoncus. Sed dignissim eget nisl eu ultricies. Donec
+                  ornare elit a pulvinar malesuada. Ut id egestas magna.
+                  Praesent tincidunt nibh vitae hendrerit luctus.
                 </p>
                 <p>
-                  Praesent egestas magna vitae arcu efficitur auctor. Quisque non pharetra tellus. Cras egestas varius
-                  magna, et porttitor felis dictum eu. Proin vehicula tristique elit, non sagittis tortor aliquet sit
-                  amet. Donec pharetra pellentesque dui in facilisis. Aenean porttitor eros nibh, at commodo neque
-                  mollis imperdiet. In tempus ultricies odio, eget interdum felis euismod sollicitudin.
+                  Praesent egestas magna vitae arcu efficitur auctor. Quisque
+                  non pharetra tellus. Cras egestas varius magna, et porttitor
+                  felis dictum eu. Proin vehicula tristique elit, non sagittis
+                  tortor aliquet sit amet. Donec pharetra pellentesque dui in
+                  facilisis. Aenean porttitor eros nibh, at commodo neque mollis
+                  imperdiet. In tempus ultricies odio, eget interdum felis
+                  euismod sollicitudin.
                 </p>
                 <p>
-                  Sed aliquet aliquet nibh et iaculis. Cras nulla augue, commodo a auctor in, fermentum ut lectus.
-                  Praesent nec ligula quis urna feugiat consequat eu ac enim. Quisque tristique arcu ac interdum
-                  feugiat. Suspendisse pellentesque risus id sapien condimentum rhoncus. Etiam tristique lorem quis
-                  justo semper, eget vulputate purus semper.
+                  Sed aliquet aliquet nibh et iaculis. Cras nulla augue, commodo
+                  a auctor in, fermentum ut lectus. Praesent nec ligula quis
+                  urna feugiat consequat eu ac enim. Quisque tristique arcu ac
+                  interdum feugiat. Suspendisse pellentesque risus id sapien
+                  condimentum rhoncus. Etiam tristique lorem quis justo semper,
+                  eget vulputate purus semper.
                 </p>
               </div>
             </div>
@@ -160,13 +171,15 @@ export default function About({}: Props) {
                 {links.map((link, linkIdx) => (
                   <li
                     key={link.name}
-                    className={classNames(
+                    className={clsx(
                       'flex',
-                      linkIdx === links.length - 1 ? 'mt-4 border-t border-zinc-100 pt-8 dark:border-zinc-700/40' : ''
+                      linkIdx === links.length - 1
+                        ? 'mt-4 border-t border-zinc-100 pt-8 dark:border-zinc-700/40'
+                        : ''
                     )}
                   >
                     <Link
-                      className="group flex text-sm font-medium text-zinc-800 transition hover:text-cyan-500 dark:text-zinc-200 dark:hover:text-cyan-500"
+                      className="group flex text-sm font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500"
                       href={link.url}
                     >
                       {link.icon}
@@ -186,5 +199,5 @@ export default function About({}: Props) {
         </div>
       </div>
     </Layout>
-  );
+  )
 }

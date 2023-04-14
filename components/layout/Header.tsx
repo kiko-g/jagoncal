@@ -1,21 +1,27 @@
-import React from 'react';
-import classNames from 'classnames';
-import Link from 'next/link';
-import Image from 'next/image';
-import { NavDesktop, DarkModeSwitch, Hamburger, NavMobile } from './';
+import React from 'react'
+import clsx from 'clsx'
+import Link from 'next/link'
+import Image from 'next/image'
+import { NavDesktop, DarkModeSwitch, Hamburger, NavMobile } from './'
 
 type Props = {
-  location: string;
-};
+  location: string
+}
 
 export default function Header({ location }: Props) {
-  const [hamburgerOpen, setHamburgerOpen] = React.useState(false);
+  const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
 
   return (
-    <header className={classNames('sticky top-0 z-20 flex flex-col backdrop-blur')}>
-      <div className="flex items-center justify-between py-6 px-6 md:px-16 md:py-8">
+    <header className={clsx('sticky top-0 z-20 flex flex-col backdrop-blur')}>
+      <div className="flex items-center justify-between px-6 py-6 md:px-16 md:py-8">
         <div>
-          <Link href="/" className={classNames(location === 'Home' ? 'invisible' : '', 'transition hover:opacity-80')}>
+          <Link
+            href="/"
+            className={clsx(
+              location === 'Home' ? 'invisible' : '',
+              'transition hover:opacity-80'
+            )}
+          >
             <Image
               src="/avatar.jpg"
               alt="Profile"
@@ -38,5 +44,5 @@ export default function Header({ location }: Props) {
 
       <NavMobile location={location} isOpen={hamburgerOpen} />
     </header>
-  );
+  )
 }

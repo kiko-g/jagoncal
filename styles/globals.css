@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './prism.css';
+@import './article.css';
+
+*::selection {
+  @apply bg-blue-500/50 text-white;
+}
 
 html {
   @apply scroll-smooth;
@@ -13,4 +19,8 @@ h4,
 h5,
 h6 {
   @apply font-lexend;
+}
+
+pre {
+  @apply my-6 whitespace-pre-wrap rounded bg-dark p-4 font-mono text-sm dark:bg-zinc-800;
 }
