@@ -4,7 +4,7 @@ import React from 'react'
 
 type Props = {}
 
-export default function Socials({}: Props) {
+export function Socials({}: Props) {
   const links = [
     {
       name: 'GitHub',

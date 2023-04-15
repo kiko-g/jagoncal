@@ -1,15 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Layout } from '../components/layout'
+import type { ArticleLink } from '@/types'
 import { getAllArticles } from '@/lib/getMdxFiles'
 import { generateRssFeed } from '@/lib/generateRssFeed'
-import { ArticleLink } from '@/types'
-
-import { Photos } from '@/components/Photos'
-import { Resume } from '@/components/Resume'
-import { ArticleCard } from '@/components/ArticleCard'
-import Socials from '@/components/Socials'
+import { Layout } from '../components/layout'
+import { Resume, ArticleCard, Photos, Socials } from '@/components/home'
 
 type Props = {
   articles: ArticleLink[]
