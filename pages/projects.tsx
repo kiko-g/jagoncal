@@ -27,7 +27,7 @@ export default function Projects({}: Props) {
         </p>
       ),
       url: 'https://swuav.ciimar.up.pt/',
-      domain: 'ciimar.up.pt',
+      domain: 'gis.ciimar.up.pt',
     },
     {
       title: 'COSMO',
@@ -51,7 +51,35 @@ export default function Projects({}: Props) {
         </p>
       ),
       url: 'https://gis.ciimar.up.pt/cabedelo/',
-      domain: 'ciimar.up.pt',
+      domain: 'gis.ciimar.up.pt',
+    },
+    {
+      title: 'WEBSIG: MarRisk Project',
+      description: (
+        <p>
+          Adaptation to climate change: know the risks and increase resilience{' '}
+          <span className="italic">(website in development)</span>.
+        </p>
+      ),
+      url: 'https://gis.ciimar.up.pt/MarRisk/',
+      domain: 'gis.ciimar.up.pt',
+    },
+    {
+      title: 'Remote Data Access in QGIS',
+      description: (
+        <p>
+          Access to geographic information through project files (QGS) or layer
+          files (QLR). Includes mainly coastal data and some general data.
+        </p>
+      ),
+      url: 'https://gis.ciimar.up.pt/data/',
+      domain: 'gis.ciimar.up.pt',
+    },
+    {
+      title: 'Digital Elevation Model (DEM) Global Download',
+      description: <p>Data for SRTM, ASTER, ALOS and TerraSAR.</p>,
+      url: 'https://www.fc.up.pt/pessoas/jagoncal/dems/',
+      domain: 'gis.ciimar.up.pt',
     },
   ]
 
