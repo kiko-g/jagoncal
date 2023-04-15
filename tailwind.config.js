@@ -28,6 +28,18 @@ module.exports = {
       boxShadow: {
         uniform: '0 0 8px 0 rgba(0, 0, 0, 0.25)',
       },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '25%': { transform: 'translateX(-25%)' },
+          '50%': { transform: 'translateX(0%)' },
+          '75%': { transform: 'translateX(25%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+      },
+      animation: {
+        scroll: 'marquee 50s linear infinite',
+      },
     },
   },
 }

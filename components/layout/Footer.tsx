@@ -44,9 +44,18 @@ export default function Footer({}: Props) {
                   </Link>
                 ))}
               </div>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                ©{new Date().getFullYear()} José Gonçalves. All rights reserved.
-              </p>
+              <div className="flex flex-col items-end">
+                <p className="text-sm text-zinc-400 dark:text-zinc-500">
+                  © {new Date().getFullYear()} José Gonçalves. All rights
+                  reserved.
+                </p>
+                <Link
+                  href="mailto:jagoncal@fc.up.pt"
+                  className="text-sm text-blue-500/50 transition hover:text-blue-500 hover:underline dark:text-blue-500/50 dark:hover:text-blue-500"
+                >
+                  jagoncal@fc.up.pt
+                </Link>
+              </div>
             </div>
           </div>
         </div>

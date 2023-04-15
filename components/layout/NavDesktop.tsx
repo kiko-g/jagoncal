@@ -27,7 +27,7 @@ export default function NavDesktop({ location }: Props) {
   ]
 
   return (
-    <nav className="rounded-full border border-gray-200 bg-gray-100 px-4 dark:border-white/20 dark:bg-zinc-900">
+    <nav className="rounded-full border border-gray-200 bg-gray-50 px-4 shadow-xl dark:border-white/20 dark:bg-zinc-900">
       <ul className="flex gap-4">
         {navigation.map((item) => (
           <li key={item.title}>
