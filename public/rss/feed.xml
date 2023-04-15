@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Spencer Sharp</title>
+        <link>undefined</link>
+        <description>Your blog description</description>
+        <lastBuildDate>Sat, 15 Apr 2023 13:35:12 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Spencer Sharp</title>
+            <url>undefined/favicon.ico</url>
+            <link>undefined</link>
+        </image>
+        <copyright>All rights reserved 2023</copyright>
+        <item>
+            <title><![CDATA[Digital Elevation Model (DEM) Data for Portugal]]></title>
+            <link>undefined/articles/dem-data-portugal</link>
+            <guid>undefined/articles/dem-data-portugal</guid>
+            <pubDate>Tue, 02 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is where you describe and summarize your article post.]]></description>
+            <content:encoded><![CDATA[<h2>Digital Elevation Model (DEM) Data for Portugal</h2>
+<p>The <a href="#Download">links below</a> contain digital elevation models for Portugal Continental, obtained from satellite missions: SRTM, ASTER, ALOS-Prism and TerraSAR-X. These data are open, but if used should be referenced to their origin (NASA, JAXA, DLR) and this web page regarding the preparation of data for Portugal Continental. See below details about the original data.</p>
+<p>The cells of 1 degree of the area between (10W,36N) and (6W,43N) were combined into a continuous raster. Small groups of empty pixels were filled by interpolation using the GDAL_FILLNODATA command. The raster was projected to the national coordinate system in the PT-TM06 projection of the ETRS89 datum (EPSG:3763) using the GDALWARP command, with a 25 meter pixel (the 1&quot; lat-long pixel has the dimension, at latitude 39d40&#x27;N, of 30.84 m by 23.84 m).</p>
+<p>The pixel values were obtained by bilinear resampling. In the case of TerraSAR-X, with a resolution of 3&quot; in geographic coordinates, the projected pixel was chosen with the dimension 80 m. All altitudes are above sea level. The boundary coordinates of the projected rasters were chosen as integer numbers in kilometers: (-120, 302) to (164, 278). At this resolution ETRS89 and WGS84 were considered coincident.</p>
+<p>All rasters are in the GeoTiff format, as 16-bit integers, &quot;deflate&quot; compression, with internal &quot;tiles&quot; and &quot;overviews&quot;, starting at level 4.</p>
+<h2>Download</h2>]]></content:encoded>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+        <item>
+            <title><![CDATA[Coordinate Transformations in Portugal]]></title>
+            <link>undefined/articles/transforming-coordinates</link>
+            <guid>undefined/articles/transforming-coordinates</guid>
+            <pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is where you describe and summarize your article post.]]></description>
+            <content:encoded><![CDATA[<h2>Datum transformation grids in NTV2 format</h2>
+<p>The datum transformations, between a local datum and a global datum, are often performed by the Bursa-Wolf transformation, based on translation, rotation and scale over geocentric cartesian coordinates. These transformations are approximate, often involving errors of a few meters, not modeling deformations of the geodetic network, which defines the local system. The following figures show the differences in geodetic coordinates in seconds of datum 73 to ETRS89 and of datum Lisbon to ETRS89. The deformations are greater in the case of the Lisbon datum</p>
+<div class="my-8 space-y-6"><img alt="Datum 73 to ETRS89" loading="lazy" width="1600" height="960" decoding="async" data-nimg="1" class="rounded object-cover shadow-xl" style="color:transparent" srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffig1_d73_etrs89.b491dbde.gif&amp;w=1920&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffig1_d73_etrs89.b491dbde.gif&amp;w=3840&amp;q=75 2x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffig1_d73_etrs89.b491dbde.gif&amp;w=3840&amp;q=75"/><img alt="Datum Lisbon to ETRS89" loading="lazy" width="1600" height="960" decoding="async" data-nimg="1" class="rounded object-cover shadow-xl" style="color:transparent" srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffig2_dlx_etrs89.6e1765a1.gif&amp;w=1920&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffig2_dlx_etrs89.6e1765a1.gif&amp;w=3840&amp;q=75 2x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffig2_dlx_etrs89.6e1765a1.gif&amp;w=3840&amp;q=75"/></div>
+<p>The Portuguese Geodetic Institute (<em>Direção Geral do Território</em>, DGT in Portuguese) has observed about 1600 geodetic vertices in Portugal Continental. With this information and the geographic coordinates in the old systems it was possible to determine grids of coordinate differences to ETRS89, of datum 73, datum Lisbon (Hayford ellipsoid), European Datum 1950 and datum Lisbon (Bessel ellipsoid). A grid with a spacing of 0.1 degrees was used, which is sufficient to model the differences and does not excessively
+bias the points that have the largest errors.</p>
+<p>More information about the generation of grids can be found in the following article of the CNCG2009 The grid files can be downloaded at: NTV2 grids for Portugal (José Alberto Gonçalves).</p>
+<p>The ZIP file contains the grids of the four old systems and a grid of the national geoid undulation (GeodPT08). It also contains a projection configuration file for use with the PROJ program. The DGT grids, with a spacing of 0.02 degrees, can also be used for datum 73 and datum Lisbon.</p>
+<h2>Coordinate transformation with the PROJ program</h2>
+<p>TBD</p>
+<h2>Transforming raster and vector files with GDAL software</h2>
+<p>TBD</p>
+<h2>Web interface for coordinate transformations</h2>
+<p>Click the image below to access an external interface, a coordinate transformation service developed by André Pinhal, a PhD student at FCUP, which uses grids to make several coordinate transformations. The transformation can be applied to individual points in the interface, or to text files. It also includes altitude transformation with the national geoid undulation model (GeodPT08). The interface also allows you to calculate values of deformation of the projections.</p>
+<a target="_blank" class="group block rounded transition hover:opacity-60" href="https://www.apinhal.pt/ProjGridTransform/"><img alt="Web interface for coordinate transformations" loading="lazy" width="1688" height="824" decoding="async" data-nimg="1" class="rounded object-cover shadow-xl" style="color:transparent" srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finterface2.78a2d30e.png&amp;w=1920&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finterface2.78a2d30e.png&amp;w=3840&amp;q=75 2x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finterface2.78a2d30e.png&amp;w=3840&amp;q=75"/></a>]]></content:encoded>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+        <item>
+            <title><![CDATA[Introducing Animaginary: High performance web animations]]></title>
+            <link>undefined/articles/example</link>
+            <guid>undefined/articles/example</guid>
+            <pubDate>Fri, 02 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[When you're building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.]]></description>
+            <content:encoded><![CDATA[<p>When you&#x27;re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.</p>
+<p>To make this possible, we needed to squeeze every drop of performance out of the browser possible. And so Animaginary was born.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> animate <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">&#x27;@planetaria/animaginary&#x27;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">MyComponent</span></span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> open<span class="token punctuation">,</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>animate<span class="token punctuation">.</span><span class="token property-access">div</span>
+      <span class="token keyword">in</span><span class="token operator">=</span><span class="token punctuation">{</span>open<span class="token punctuation">}</span>
+      animateFrom<span class="token operator">=</span><span class="token string">&quot;opacity-0 scale-95&quot;</span>
+      animateTo<span class="token operator">=</span><span class="token string">&quot;opacity-100 scale-100&quot;</span>
+      duration<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">350</span><span class="token punctuation">}</span>
+    <span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>animate<span class="token punctuation">.</span><span class="token property-access">div</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Animaginary is our new web animation library that redefines what you thought was possible on the web. Hand-written in optimized WASM, Animaginary can even animate the <code>height</code> property of an element at 60fps.</p>
+<h2>Sermone fata</h2>
+<p>Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite variatus, redolentia adeunt.</p>
+<p>Tyrioque dies, naufraga sua adit partibus celanda torquere temptata, erit maneat et ramos, <a href="#">iam</a> ait dominari potitus! Tibi litora matremque fumantia condi radicibus opusque.</p>
+<p>Deus feram verumque, fecit, ira tamen, terras per alienae victum. Mutantur levitate quas ubi arcum ripas oculos abest. Adest <a href="#">commissaque
+victae</a> in gemitus nectareis ire diva dotibus ora, et findi huic invenit; fatis?</p>
+<p>Fractaque dare superinposita nimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu nil utinam paternos ima, commentaque.</p>
+<pre class="language-c"><code class="language-c">exbibyte_wins <span class="token operator">=</span> <span class="token function">gigahertz</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+grayscaleUtilityClient <span class="token operator">=</span> control_uat<span class="token punctuation">;</span>
+pcmciaHibernate <span class="token operator">=</span> <span class="token function">oop_virus_console</span><span class="token punctuation">(</span>text_mountain<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>stateWaisFirewire <span class="token operator">&gt;=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    jfs <span class="token operator">=</span> <span class="token number">647065</span> <span class="token operator">/</span> <span class="token function">ldapVrml</span><span class="token punctuation">(</span>tutorialRestore<span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    metal_runtime_parse <span class="token operator">=</span> roomComputingResolution <span class="token operator">-</span> toolbarUpload <span class="token operator">+</span> ipx_nvram_open<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    maximizeSidebar <span class="token operator">*=</span> <span class="token function">suffix_url</span><span class="token punctuation">(</span>flatbed <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">,</span> requirements_encoding_node <span class="token operator">+</span> only_qbe_media<span class="token punctuation">,</span> minicomputer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Aere repetiti cognataque natus. Habebat vela solutis saepe munus nondum adhuc oscula nomina pignora corpus deserat.</p>
+<h2>Lethaei Pindumve me quae dinumerat Pavor</h2>
+<p>Idem se saxa fata pollentibus geminos; quos pedibus. Est urnis Herses omnes nec divite: et ille illa furit sim verbis Cyllenius.</p>
+<ol>
+<li>Captus inpleverunt collo</li>
+<li>Nec nam placebant</li>
+<li>Siquos vulgus</li>
+<li>Dictis carissime fugae</li>
+<li>A tacitos nulla viginti</li>
+</ol>
+<p>Ungues fistula annoso, ille addit linoque motatque uberior verso <a href="#">rubuerunt</a> confine desuetaque. <em>Sanguine</em> anteit emerguntque expugnacior est pennas iniqui ecce <strong>haeret</strong> genus: peiora imagine fossas Cephisos formosa! Refugitque amata <a href="#">refelli</a> supplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota ars talis.</p>
+<pre class="language-c"><code class="language-c">digital<span class="token punctuation">.</span>webcam_dual_frequency <span class="token operator">=</span> webmasterMms<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">+</span> language_standalone_google<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cc_inbox_layout <span class="token operator">*=</span> file_character<span class="token punctuation">;</span>
+    task <span class="token operator">+=</span> p<span class="token punctuation">;</span>
+    lockUnicode <span class="token operator">+=</span> <span class="token function">enterprise_monochrome</span><span class="token punctuation">(</span>tokenFunctionPersonal<span class="token punctuation">,</span> keyVirtual<span class="token punctuation">,</span> adf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">windows_binary_esports</span><span class="token punctuation">(</span><span class="token number">87734</span><span class="token punctuation">,</span> <span class="token function">array</span><span class="token punctuation">(</span>restoreRomTopology<span class="token punctuation">,</span> <span class="token function">adRaw</span><span class="token punctuation">(</span><span class="token number">407314</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dongleBashThumbnail<span class="token punctuation">)</span><span class="token punctuation">,</span> interpreter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Sit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam proelia: illo patrio <em>esse summus</em>, enim sua serpentibus, Hyleusque. Est coniuge recuso; refert Coroniden ignotos manat, adfectu.</p>]]></content:encoded>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+    </channel>
+</rss>

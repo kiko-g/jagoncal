@@ -81,6 +81,12 @@ export default function Projects({}: Props) {
       url: 'https://www.fc.up.pt/pessoas/jagoncal/dems/',
       domain: 'gis.ciimar.up.pt',
     },
+    {
+      title: 'Digital Elevation Model (DEM) Global Download 2',
+      description: <p>Data for SRTM, ASTER, ALOS and TerraSAR.</p>,
+      url: 'https://www.fc.up.pt/pessoas/jagoncal/dems/',
+      domain: 'gis.ciimar.up.pt',
+    },
   ]
 
   const headline = 'Projects and Research'
