@@ -9,7 +9,7 @@ export type ArticleLink = {
 
 export type ProjectLink = {
   title: string
-  description: string
+  description: React.ReactNode
   url: string
   domain: string
 }

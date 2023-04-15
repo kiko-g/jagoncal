@@ -19,7 +19,7 @@ export default function About({}: Props) {
                   src="/avatar.jpg"
                   decoding="async"
                   data-nimg="1"
-                  className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                  className="aspect-square rotate-0 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 md:rotate-3"
                   loading="lazy"
                   width={800}
                   height={800}
