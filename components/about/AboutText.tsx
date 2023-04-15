@@ -6,12 +6,7 @@ export function AboutText({}: Props) {
   return (
     <>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus
-        malesuada nibh, eget molestie elit feugiat sit amet. Vestibulum porta
-        gravida mauris id pellentesque. Sed vitae est lacinia, tincidunt metus
-        sit amet, molestie est. Nulla porttitor, augue id dignissim commodo,
-        nunc lectus tempus arcu, ac egestas nisi justo id lectus. Cras iaculis
-        enim quis orci iaculis, eu pharetra ante cursus.
+        xxx.
       </p>
       <p>
         Quisque vulputate est id magna feugiat congue. Proin eget orci eu leo
