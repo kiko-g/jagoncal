@@ -1,14 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import type { BlogpostLink } from '@/types'
+import type { BlogpostMeta } from '@/types'
 import { getAllBlogposts } from '@/lib/getMdxFiles'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { Layout } from '../components/layout'
 import { Resume, BlogpostCard, Photos, Socials } from '@/components/home'
 
 type Props = {
-  blogposts: BlogpostLink[]
+  blogposts: BlogpostMeta[]
 }
 
 export default function Home({ blogposts }: Props) {

@@ -1,4 +1,4 @@
-export type BlogpostLink = {
+export type BlogpostMeta = {
   slug: string
   author: string
   date: string

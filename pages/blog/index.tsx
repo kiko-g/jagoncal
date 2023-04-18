@@ -1,15 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
-import type { BlogpostLink } from '@/types'
+import type { BlogpostMeta } from '@/types'
 import { Layout } from '@/components/layout'
 import { getAllBlogposts } from '@/lib/getMdxFiles'
 
 type Props = {
-  blogposts: BlogpostLink[]
+  blogposts: BlogpostMeta[]
 }
 
 type BlogpostProps = {
-  blogpost: BlogpostLink
+  blogpost: BlogpostMeta
 }
 
 export default function Blog({ blogposts }: Props) {
