@@ -1,3 +1,4 @@
+import Card from './Card'
 import DarkModeSwitch from './DarkModeSwitch'
 import Footer from './Footer'
 import Hamburger from './Hamburger'
@@ -9,6 +10,7 @@ import Prose from './Prose'
 import Seo from './Seo'
 
 export {
+  Card,
   DarkModeSwitch,
   Footer,
   Hamburger,

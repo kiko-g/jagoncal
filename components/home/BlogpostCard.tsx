@@ -1,6 +1,6 @@
 import React from 'react'
 import { formatDate } from '@/lib/formatDate'
-import { Card } from '@/components/Card'
+import { Card } from '@/components/layout'
 
 export function BlogpostCard({ blogpost }: any) {
   return (
