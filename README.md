@@ -2,24 +2,17 @@
 
 This is the source code for José Gonçalves personal website, [hosted in Vercel](https://jagoncal.vercel.app).
 
-## Website content
+## Editing website content
 
-To edit the website content follow these instructions:
+All the information on the website that is meant to be updated is inside `*.mdx` folders. The `*.mdx` files are written in Markdown with some React components. These files have been configured so that the user only needs to edit:
 
-- **Projects**: edit the `pages/projects.tsx` file. There is a `projects` variable which conveys an array of objects. Each object represents a project and has the following properties:
+- The `meta` variable: There is a variable in every `*.mdx` file called `meta` that exports metadata related to the page.
+- The **actual markdown content**: Below every `export const meta = { ... }` line, there is a markdown text that is meant to be edited.
 
-  - `title`: the project title
-  - `description`: the project description
-  - `url`: the link to an outside resource of the project
-  - `domain`: the domain of the url
+The existing `*.mdx` files are:
 
-- **Blog**: these are basically **journal pages** or **blog posts**. To edit them go to the `pages/blog` folder and edit the markdown (`.mdx`) files. The files are named after the name or title of the blogpost. Inside you can write in Markdown and also use React components. Read about [Markdown Syntax](https://www.markdownguide.org/cheat-sheet/) and also about [MarkdownX](https://mdxjs.com/guides/gfm/) to be proficient in editing the content. The blogposts are ordered by date, so the most recent blogpost is the first one.
-
-- **Teaching**: edit the `pages/teaching.tsx` file. There is a `teaching` variable which conveys an array of objects which represents groups of teaching, grouped by institution. Each object represents a teaching activity and has the following properties:
-
-  - `title`: the teaching activity title
-  - `course`:
-    - `name`: Name of the course
-    - `timeSpan`: Span of time the teacher has been active
-    - `description`: Description of the course and its main objectives
-    - `url`: Link to the course website
+- `index.mdx`: The home page.
+- `about.mdx`: The about page.
+- `projects.mdx`: The projects page - each project card is defined inside the `meta` variable of this file.
+- `projects.mdx`: The teaching page - each teaching entry is defined inside the `meta` variable of this file.
+- `blog/*.mdx`: The blog posts - inside the `blog` folder each folder or `.mdx` file is a blog post and possibly contains images related to the blogpost.
