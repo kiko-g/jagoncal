@@ -1,6 +1,5 @@
 import React from 'react'
-import Seo from '../Seo'
-import { Header, Footer } from './'
+import { Header, Footer, Seo } from './'
 
 type Props = {
   children?: React.ReactNode

@@ -5,7 +5,8 @@ import Header from './Header'
 import Layout from './Layout'
 import NavDesktop from './NavDesktop'
 import NavMobile from './NavMobile'
-import { Prose } from './Prose'
+import Prose from './Prose'
+import Seo from './Seo'
 
 export {
   DarkModeSwitch,
@@ -15,5 +16,6 @@ export {
   Layout,
   NavDesktop,
   NavMobile,
-  Prose
+  Prose,
+  Seo
 }
