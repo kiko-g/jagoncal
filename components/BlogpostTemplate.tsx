@@ -17,7 +17,7 @@ export function BlogpostTemplate({ children, meta, isRssFeed = false }: Props) {
     <Layout location={meta.title} description={meta.description}>
       <article className="mx-auto mt-12 max-w-3xl lg:mt-24">
         <BlogpostHeader meta={meta} />
-        <Prose className="mx-auto mt-8 max-w-3xl">{children}</Prose>
+        <Prose className="blogpost mx-auto mt-8 max-w-3xl">{children}</Prose>
         <BlogpostFooter />
       </article>
     </Layout>
