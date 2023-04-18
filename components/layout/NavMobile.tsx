@@ -16,8 +16,8 @@ export default function NavMobile({ location, isOpen }: Props) {
       href: '/about',
     },
     {
-      title: 'Articles',
-      href: '/articles',
+      title: 'Blog',
+      href: '/blog',
     },
     {
       title: 'Projects',

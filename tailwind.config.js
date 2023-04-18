@@ -23,7 +23,7 @@ module.exports = {
       fontFamily: {
         inter: ['var(--inter-font)', ...fontFamily.sans],
         lexend: ['var(--lexend-font)', ...fontFamily.sans],
-        mono: ['var(--firacode-font)', ...fontFamily.mono],
+        code: ['Fira Code', ...fontFamily.mono],
       },
       boxShadow: {
         uniform: '0 0 8px 0 rgba(0, 0, 0, 0.25)',

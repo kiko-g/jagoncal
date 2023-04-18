@@ -11,7 +11,7 @@ export default function Seo({ location, description }: Props) {
   const author = `kikogoncalves`
   const desc =
     description ||
-    `José Gonçalves' website. Find out more about my projects, articles and work.`
+    `José Gonçalves' website. Find out more about my projects, articles, publications and work.`
   const meta = [
     {
       name: `description`,

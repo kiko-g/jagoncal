@@ -1,22 +1,22 @@
 import React from 'react'
 import Link from 'next/link'
-import type { ArticleLink } from '@/types'
+import type { BlogpostLink } from '@/types'
 import { Layout } from '@/components/layout'
-import { getAllArticles } from '@/lib/getMdxFiles'
+import { getAllBlogposts } from '@/lib/getMdxFiles'
 
 type Props = {
-  articles: ArticleLink[]
+  blogposts: BlogpostLink[]
 }
 
-type ArticleProps = {
-  article: ArticleLink
+type BlogpostProps = {
+  blogpost: BlogpostLink
 }
 
-export default function Articles({ articles }: Props) {
+export default function Blog({ blogposts }: Props) {
   const description = `All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order`
 
   return (
-    <Layout location="Articles" description={description}>
+    <Layout location="Blog" description={description}>
       <div className="relative mt-16 px-4 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl lg:max-w-5xl">
           <div className="max-w-2xl">
@@ -32,8 +32,11 @@ export default function Articles({ articles }: Props) {
           <div className="mt-16 sm:mt-20">
             <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
               <div className="flex max-w-3xl flex-col space-y-16">
-                {articles.map((article, articleIdx) => (
-                  <Article key={`article-${articleIdx}`} article={article} />
+                {blogposts.map((blogpost, blogpostIdx) => (
+                  <Blogpost
+                    key={`blogpost-${blogpostIdx}`}
+                    blogpost={blogpost}
+                  />
                 ))}
               </div>
             </div>
@@ -44,15 +47,15 @@ export default function Articles({ articles }: Props) {
   )
 }
 
-function Article({ article }: ArticleProps) {
+function Blogpost({ blogpost }: BlogpostProps) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <div className="group relative flex flex-col items-start md:col-span-3">
         <h2 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
           <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-          <Link href={`articles/${article.slug}`}>
+          <Link href={`blog/${blogpost.slug}`}>
             <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-            <span className="relative z-10">{article.title}</span>
+            <span className="relative z-10">{blogpost.title}</span>
           </Link>
         </h2>
         <time
@@ -65,16 +68,16 @@ function Article({ article }: ArticleProps) {
           >
             <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
           </span>
-          {article.date}
+          {blogpost.date}
         </time>
         <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          {article.description}
+          {blogpost.description}
         </p>
         <div
           aria-hidden="true"
           className="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-500"
         >
-          Read article
+          Read blogpost
           <svg
             viewBox="0 0 16 16"
             fill="none"
@@ -94,7 +97,7 @@ function Article({ article }: ArticleProps) {
         className="relative z-10 order-first mb-3 mt-1 hidden items-center text-sm text-zinc-400 dark:text-zinc-500 md:block"
         dateTime="2022-09-05"
       >
-        {article.date}
+        {blogpost.date}
       </time>
     </article>
   )
@@ -103,7 +106,9 @@ function Article({ article }: ArticleProps) {
 export async function getStaticProps() {
   return {
     props: {
-      articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
+      blogposts: (await getAllBlogposts()).map(
+        ({ component, ...meta }) => meta
+      ),
     },
   }
 }

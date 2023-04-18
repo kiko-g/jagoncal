@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import './prism.css';
-@import './article.css';
+@import './blogpost.css';
 
 *::selection {
   @apply bg-blue-500/50 text-white;
@@ -22,5 +22,5 @@ h6 {
 }
 
 pre {
-  @apply my-6 whitespace-pre-wrap rounded bg-dark p-4 font-mono text-sm dark:bg-zinc-800;
+  @apply my-6 whitespace-pre-wrap rounded bg-dark p-4 font-code text-sm dark:bg-zinc-800;
 }

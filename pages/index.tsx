@@ -1,17 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import type { ArticleLink } from '@/types'
-import { getAllArticles } from '@/lib/getMdxFiles'
+import type { BlogpostLink } from '@/types'
+import { getAllBlogposts } from '@/lib/getMdxFiles'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { Layout } from '../components/layout'
-import { Resume, ArticleCard, Photos, Socials } from '@/components/home'
+import { Resume, BlogpostCard, Photos, Socials } from '@/components/home'
 
 type Props = {
-  articles: ArticleLink[]
+  blogposts: BlogpostLink[]
 }
 
-export default function Home({ articles }: Props) {
+export default function Home({ blogposts }: Props) {
   return (
     <Layout location="Home">
       <article className="relative mx-auto flex max-w-6xl flex-col px-4 sm:px-12 lg:px-16">
@@ -50,8 +50,8 @@ export default function Home({ articles }: Props) {
         <div className="mt-24 md:mt-28">
           <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
             <div className="flex flex-col gap-16">
-              {articles.map((article) => (
-                <ArticleCard key={article.slug} article={article} />
+              {blogposts.map((blogpost) => (
+                <BlogpostCard key={blogpost.slug} blogpost={blogpost} />
               ))}
             </div>
 
@@ -72,7 +72,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      articles: (await getAllArticles())
+      blogposts: (await getAllBlogposts())
         .slice(0, 4)
         .map(({ component, ...meta }) => meta),
     },

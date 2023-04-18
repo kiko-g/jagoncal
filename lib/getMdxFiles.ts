@@ -1,29 +1,29 @@
 import glob from 'fast-glob'
 import * as path from 'path'
 
-interface Article {
+interface Blogpost {
   date: string
 }
 
-async function importArticle(articleFilename: string) {
+async function importBlogpost(blogpostFilename: string) {
   let { meta, default: component } = await import(
-    `../pages/articles/${articleFilename}`
+    `../pages/blog/${blogpostFilename}`
   )
   return {
-    slug: articleFilename.replace(/(\/index)?\.mdx$/, ''),
+    slug: blogpostFilename.replace(/(\/index)?\.mdx$/, ''),
     ...meta,
     component,
   }
 }
 
-export async function getAllArticles() {
-  let articleFilenames = await glob(['*.mdx', '*/index.mdx'], {
-    cwd: path.join(process.cwd(), 'pages/articles'),
+export async function getAllBlogposts() {
+  let blogpostFilenames = await glob(['*.mdx', '*/index.mdx'], {
+    cwd: path.join(process.cwd(), 'pages/blog'),
   })
 
-  let articles = await Promise.all(articleFilenames.map(importArticle))
+  let blogposts = await Promise.all(blogpostFilenames.map(importBlogpost))
 
-  return articles.sort((a: Article, z: Article) => {
+  return blogposts.sort((a: Blogpost, z: Blogpost) => {
     return new Date(z.date).getTime() - new Date(a.date).getTime()
   })
 }

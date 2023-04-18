@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router'
-import { Prose } from '@/components/article/Prose'
+import { Prose } from '@/components/blog/Prose'
 import { formatDate } from '@/lib/formatDate'
 import Layout from '../layout/Layout'
 import { ArrowLongLeftIcon, ArrowLongUpIcon } from '@heroicons/react/24/outline'
 
-export function ArticleTemplate({ children, meta, isRssFeed = false }) {
+export function BlogpostTemplate({ children, meta, isRssFeed = false }) {
   if (isRssFeed) {
     return children
   }
@@ -12,9 +12,9 @@ export function ArticleTemplate({ children, meta, isRssFeed = false }) {
   return (
     <Layout location={meta.title} description={meta.description}>
       <article className="mx-auto mt-12 max-w-3xl lg:mt-24">
-        <ArticleHeader meta={meta} />
+        <BlogpostHeader meta={meta} />
         <Prose className="mx-auto mt-8 max-w-3xl">{children}</Prose>
-        <ArticleFooter meta={meta} />
+        <BlogpostFooter meta={meta} />
       </article>
     </Layout>
   )
@@ -27,7 +27,7 @@ function GoBackButton() {
     <button
       type="button"
       onClick={() => router.back()}
-      aria-label="Go back to articles"
+      aria-label="Go back to blog"
       className="group order-1 flex items-center gap-1.5 md:order-2"
     >
       <ArrowLongLeftIcon className="h-5 w-5 stroke-zinc-200 transition group-hover:stroke-zinc-300 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
@@ -54,7 +54,7 @@ function BackToTopButton() {
   )
 }
 
-function ArticleHeader({ meta }) {
+function BlogpostHeader({ meta }) {
   return (
     <header className="flex w-full flex-col">
       <div className="mt-4 flex w-full items-center justify-between gap-2">
@@ -76,7 +76,7 @@ function ArticleHeader({ meta }) {
   )
 }
 
-function ArticleFooter() {
+function BlogpostFooter() {
   let router = useRouter()
 
   return (

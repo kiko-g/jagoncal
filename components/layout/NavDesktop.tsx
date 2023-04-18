@@ -13,8 +13,8 @@ export default function NavDesktop({ location }: Props) {
       href: '/about',
     },
     {
-      title: 'Articles',
-      href: '/articles',
+      title: 'Blog',
+      href: '/blog',
     },
     {
       title: 'Projects',
