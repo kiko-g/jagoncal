@@ -31,14 +31,14 @@ export function ProjectCard({ project }: ProjectProps) {
       </div>
       <h2 className="mt-6 text-base font-semibold tracking-tighter text-zinc-800 dark:text-zinc-100">
         <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-        <Link href={project.url}>
+        <Link href={project.url} target="_blank">
           <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
           <span className="relative z-10">{project.title}</span>
         </Link>
       </h2>
-      <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+      <div className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
         {project.description}
-      </p>
+      </div>
       <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200">
         <svg
           viewBox="0 0 24 24"
