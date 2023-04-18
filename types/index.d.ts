@@ -18,6 +18,18 @@ export type Course = {
 }
 
 /* Meta */
+export type HomeMeta = {
+  headline: string
+  imageFilepath: string
+}
+
+
+export type AboutMeta = {
+  name: string
+  institution: string
+  street: string
+}
+
 export type BlogpostMeta = {
   slug: string
   author: string
@@ -25,10 +37,4 @@ export type BlogpostMeta = {
   title: string
   description: string
   href: string
-}
-
-export type AboutMeta = {
-  name: string
-  institution: string
-  street: string
 }
