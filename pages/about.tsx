@@ -11,7 +11,7 @@ export default function About({}: Props) {
       <div className="relative mt-16 px-4 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl lg:max-w-5xl">
           <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-            <div className="lg:pl-20">
+            <div className="lg:pl-32">
               <div className="max-w-xs px-2.5 lg:max-w-none">
                 <Image
                   alt="profile"
@@ -19,7 +19,7 @@ export default function About({}: Props) {
                   src="/avatar.jpg"
                   decoding="async"
                   data-nimg="1"
-                  className="aspect-square rotate-0 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 md:rotate-3"
+                  className="h-72 w-72 rotate-0 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 md:rotate-3"
                   loading="lazy"
                   width={800}
                   height={800}
@@ -28,8 +28,7 @@ export default function About({}: Props) {
             </div>
             <div className="lg:order-first lg:row-span-2">
               <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                I&apos;m José Gonçalves. I live in Porto, where I do most of my
-                work.
+                José Gonçalves
               </h1>
               <div className="prose mt-6 dark:prose-invert">
                 <AboutText />
@@ -37,7 +36,7 @@ export default function About({}: Props) {
             </div>
 
             {/* Links */}
-            <div className="lg:pl-20">
+            <div className="lg:pl-32">
               <ul role="list" className="flex flex-col gap-y-4">
                 <Socials />
               </ul>
