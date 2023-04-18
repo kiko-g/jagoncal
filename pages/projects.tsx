@@ -1,7 +1,7 @@
 import React from 'react'
 import type { ProjectLink } from '@/types'
 import { Layout } from '../components/layout'
-import { ProjectCard } from '@/components/projects'
+import { ProjectCard } from '@/components/ProjectCard'
 
 type Props = {}
 

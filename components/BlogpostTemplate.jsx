@@ -1,13 +1,10 @@
 import { useRouter } from 'next/router'
-import { Prose } from '@/components/blog/Prose'
 import { formatDate } from '@/lib/formatDate'
-import Layout from '../layout/Layout'
+import { Layout, Prose } from '@/components/layout'
 import { ArrowLongLeftIcon, ArrowLongUpIcon } from '@heroicons/react/24/outline'
 
 export function BlogpostTemplate({ children, meta, isRssFeed = false }) {
-  if (isRssFeed) {
-    return children
-  }
+  if (isRssFeed) return children
 
   return (
     <Layout location={meta.title} description={meta.description}>
