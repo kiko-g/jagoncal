@@ -2,14 +2,16 @@ import React from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
+import type { AboutMeta } from '@/types'
 import { Layout } from './layout'
 import { EnvelopeIcon } from '@heroicons/react/24/solid'
 
 type Props = {
   children: React.ReactNode
+  meta: AboutMeta
 }
 
-export function AboutTemplate({ children }: Props) {
+export function AboutTemplate({ children, meta }: Props) {
   return (
     <Layout location="About">
       <div className="relative mt-16 px-4 sm:px-8 lg:px-12">
@@ -32,7 +34,7 @@ export function AboutTemplate({ children }: Props) {
             </div>
             <div className="lg:order-first lg:row-span-2">
               <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                José Gonçalves
+                {meta.name}
               </h1>
               <div className="prose mt-6 dark:prose-invert">{children}</div>
             </div>
@@ -45,8 +47,8 @@ export function AboutTemplate({ children }: Props) {
 
               {/* Details */}
               <ul className="mt-8 flex flex-col gap-y-1 border-t border-zinc-100 pt-8 text-sm font-normal tracking-tight text-zinc-400 dark:border-zinc-700/40 dark:text-zinc-500">
-                <li>Faculty of Science of the University of Porto (FCUP)</li>
-                <li>Rua do Campo Alegre, 687, 4169-007 Porto, Portugal</li>
+                <li>{meta.institution}</li>
+                <li>{meta.street}</li>
               </ul>
             </div>
           </div>
