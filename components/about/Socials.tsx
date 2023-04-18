@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { EnvelopeIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon } from '@heroicons/react/24/solid'
 
 type Props = {}
 
