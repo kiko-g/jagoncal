@@ -52,3 +52,7 @@ export type TeachingMeta = {
   teaching: TeachingGroup[]
 }
 
+export type ProjectsMeta = {
+  headline: string
+  projects: ProjectLink[]
+}
