@@ -1,75 +1,27 @@
 import React from 'react'
 import Link from 'next/link'
-import { TeachingGroup, Course } from '@/types'
-import { Layout } from '../components/layout'
+import type { Course, TeachingMeta, TeachingGroup } from '@/types'
+import { Layout } from './layout'
 
-type Props = {}
+type Props = {
+  meta: TeachingMeta
+  children: React.ReactNode
+}
 
-export default function Teaching({}: Props) {
-  const teaching: TeachingGroup[] = [
-    {
-      title: (
-        <span>
-          Faculty of Sciences of the University of Porto (
-          <Link
-            target="_blank"
-            href="https://sigarra.up.pt/fcup/en/func_geral.formview?p_codigo=236853"
-            className="text-blue-500 hover:underline"
-          >
-            FCUP
-          </Link>
-          )
-        </span>
-      ),
-      courses: [
-        {
-          name: 'Photogrammetry',
-          timeSpan: '2009 - Now',
-          description:
-            'General knowledge of photogrammetryc concepts, with emphasis on digital photogrammetry, and focused on cartography and geographical information (Master in Surveying Engineering).',
-          url: 'https://sigarra.up.pt/fcup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=499623',
-        },
-        {
-          name: 'Cartography',
-          timeSpan: '2009 - Now',
-          description:
-            'Main concepts of reference systems involved in map production and the cartographic representation methods, both traditional and digital (Master in Remote Sensing).',
-          url: 'https://sigarra.up.pt/fcup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=499605',
-        },
-      ],
-    },
-    {
-      title: 'School of Medicine and Biomedical Sciences (ICBAS)',
-      courses: [
-        {
-          name: 'Marine Geology',
-          timeSpan: '2021 - 2022',
-          description:
-            'Main geological phenomena through a global approach that involves the genesis, composition and evolution of our Planet assuming Earth as a dynamic system where processes occur as an interactive cycle involving both the Earth interior and their external effects in the atmosphere, biosphere and oceans.',
-          url: 'https://sigarra.up.pt/icbas/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=494824',
-        },
-      ],
-    },
-  ]
-
-  const headline = 'Teaching Experience'
-  const description = `Here are some courses I've either taught or still teach across different faculties of the University of Porto, but mainly in the Faculty of Sciences. I teach in the areas of Photogrammetry, Topographic Cartography and Geographic Information Systems (Bachelor in Geospatial Engineering, Master in Surveying Engineering and Master in Remote Sensing).`
-
+export function TeachingTemplate({ children, meta }: Props) {
   return (
     <Layout location="Teaching">
       <div className="relative mt-16 px-4 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl lg:max-w-5xl">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              {headline}
+              {meta.headline}
             </h1>
-            <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              {description}
-            </p>
+            <div className="mt-6">{children}</div>
           </div>
 
           <div className="mt-16 space-y-20 sm:mt-20">
-            {teaching.map((group, groupIdx) => (
+            {meta.teaching.map((group, groupIdx) => (
               <section
                 key={`teaching-group-${groupIdx}`}
                 className="md:border-l md:border-zinc-200 md:pl-6 md:dark:border-zinc-700/40"
@@ -98,11 +50,7 @@ export default function Teaching({}: Props) {
   )
 }
 
-type CourseProps = {
-  course: Course
-}
-
-function Course({ course }: CourseProps) {
+function Course({ course }: { course: Course }) {
   return (
     <article className="group relative flex flex-col items-start">
       <h3 className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">

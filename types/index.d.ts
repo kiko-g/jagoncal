@@ -38,3 +38,17 @@ export type BlogpostMeta = {
   description: string
   href: string
 }
+
+export type ProjectMeta = {
+  slug: string
+  title: string
+  description: string
+  href: string
+  imageFilepath: string
+}
+
+export type TeachingMeta = {
+  headline: string
+  teaching: TeachingGroup[]
+}
+

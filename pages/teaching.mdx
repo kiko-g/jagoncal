@@ -1,0 +1,55 @@
+import Link from 'next/link'
+import { TeachingTemplate } from '@/components/TeachingTemplate'
+
+export default (props) => <TeachingTemplate meta={meta} {...props} />
+
+export const meta = {
+  headline: 'Teaching Experience',
+  teaching: [
+    {
+      title: (
+        <span>
+          Faculty of Sciences of the University of Porto (
+          <Link
+            target="_blank"
+            href="https://sigarra.up.pt/fcup/en/func_geral.formview?p_codigo=236853"
+            className="text-blue-500 hover:underline"
+          >
+            FCUP
+          </Link>
+          )
+        </span>
+      ),
+      courses: [
+        {
+          name: 'Photogrammetry',
+          timeSpan: '2009 - Now',
+          description:
+            'General knowledge of photogrammetryc concepts, with emphasis on digital photogrammetry, and focused on cartography and geographical information (Master in Surveying Engineering).',
+          url: 'https://sigarra.up.pt/fcup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=499623',
+        },
+        {
+          name: 'Cartography',
+          timeSpan: '2009 - Now',
+          description:
+            'Main concepts of reference systems involved in map production and the cartographic representation methods, both traditional and digital (Master in Remote Sensing).',
+          url: 'https://sigarra.up.pt/fcup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=499605',
+        },
+      ],
+    },
+    {
+      title: 'School of Medicine and Biomedical Sciences (ICBAS)',
+      courses: [
+        {
+          name: 'Marine Geology',
+          timeSpan: '2021 - 2022',
+          description:
+            'Main geological phenomena through a global approach that involves the genesis, composition and evolution of our Planet assuming Earth as a dynamic system where processes occur as an interactive cycle involving both the Earth interior and their external effects in the atmosphere, biosphere and oceans.',
+          url: 'https://sigarra.up.pt/icbas/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=494824',
+        },
+      ],
+    },
+  ],
+}
+
+Here are some courses I've either taught or still teach across different faculties of the University of Porto, but mainly in the Faculty of Sciences. I teach in the areas of Photogrammetry, Topographic Cartography and Geographic Information Systems (Bachelor in Geospatial Engineering, Master in Surveying Engineering and Master in Remote Sensing).
