@@ -69,7 +69,7 @@ function GoBackButton() {
       aria-label="Go back to blog"
       className="group flex items-center gap-1.5"
     >
-      <ArrowLongLeftIcon className="h-5 w-5 stroke-zinc-200 transition group-hover:stroke-zinc-300 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+      <ArrowLongLeftIcon className="h-5 w-5 stroke-zinc-300 transition group-hover:stroke-zinc-400 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
       <span className="text-zinc-400 transition group-hover:text-zinc-500 dark:text-zinc-500 dark:group-hover:text-zinc-400">
         Go back
       </span>
@@ -88,7 +88,7 @@ function BackToTopButton() {
       <span className="text-zinc-400 transition group-hover:text-zinc-500 dark:text-zinc-500 dark:group-hover:text-zinc-400">
         Back to top
       </span>
-      <ArrowLongUpIcon className="h-5 w-5 stroke-zinc-200 transition group-hover:stroke-zinc-300 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+      <ArrowLongUpIcon className="h-5 w-5 stroke-zinc-300 transition group-hover:stroke-zinc-400 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
     </button>
   )
 }

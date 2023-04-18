@@ -2,6 +2,8 @@ import { HomeTemplate } from '@/components/HomeTemplate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllBlogposts } from '@/lib/getMdxFiles'
 
+export default (props) => <HomeTemplate meta={meta} {...props} />
+
 export async function getStaticProps() {
   if (process.env.NODE_ENV === 'production') {
     await generateRssFeed()
@@ -21,7 +23,5 @@ export const meta = {
   headline: 'Assistant Professor in Geomatics Engineering and researcher.',
   imageFilepath: 'avatar.jpg', // relative to home directory
 }
-
-export default (props) => <HomeTemplate meta={meta} {...props} />
 
 I'm José Gonçalves, a lecturer in the Faculty of Science of the University of Porto (FCUP), Department of Geosciences, Enviroment and Land Planning (DGAOT), and a researcher at CIIMAR (Interdisciplinary Centre of Marine and Environmental Research), in the Coastal Monitoring and Management Group. I hold a Ph.D. in Photogrammetry (2001) and a MSc in GIS (1993) from University College London, Department of Geomatic Engineering and a degree in Surveying Engineering from FCUP.

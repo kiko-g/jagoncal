@@ -39,7 +39,7 @@ export default function DarkModeSwitch({}: Props) {
           strokeLinecap="round"
           strokeLinejoin="round"
           aria-hidden="true"
-          className="h-6 w-6 fill-zinc-100 stroke-zinc-600 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-blue-50 [@media(prefers-color-scheme:dark)]:stroke-blue-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-blue-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-500"
+          className="h-6 w-6 fill-zinc-100 stroke-zinc-600 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-blue-50 [@media(prefers-color-scheme:dark)]:stroke-blue-300 [@media(prefers-color-scheme:dark)]:group-hover:fill-blue-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-300"
         >
           <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z"></path>
           <path
@@ -52,7 +52,7 @@ export default function DarkModeSwitch({}: Props) {
         <svg
           viewBox="0 0 24 24"
           aria-hidden="true"
-          className="hidden h-6 w-6 fill-zinc-700 stroke-blue-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-300 [@media_not_(prefers-color-scheme:dark)]:fill-blue-500/10 [@media_not_(prefers-color-scheme:dark)]:stroke-blue-500"
+          className="hidden h-6 w-6 fill-zinc-700 stroke-blue-300 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-300 [@media_not_(prefers-color-scheme:dark)]:fill-blue-300/10 [@media_not_(prefers-color-scheme:dark)]:stroke-blue-300"
         >
           <path
             d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"

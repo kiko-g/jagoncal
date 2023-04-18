@@ -13,7 +13,8 @@ type BlogpostProps = {
 }
 
 export default function Blog({ blogposts }: Props) {
-  const description = `All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order`
+  const headline = `Here are some things I write about varied topics, mostly about geomatics.`
+  const description = `You will find some case studies and research I've done that I have decided to put together in blog form.`
 
   return (
     <Layout location="Blog" description={description}>
@@ -21,8 +22,7 @@ export default function Blog({ blogposts }: Props) {
         <div className="mx-auto max-w-2xl lg:max-w-5xl">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Here are some things I write about varied topics, mostly about
-              geomatics.
+              {headline}
             </h1>
             <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
               {description}

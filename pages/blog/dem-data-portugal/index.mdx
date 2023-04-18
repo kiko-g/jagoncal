@@ -1,6 +1,13 @@
 import { BlogpostTemplate } from '@/components/BlogpostTemplate'
 import Link from 'next/link'
 import Image from 'next/image'
+import Map_DEMs from './images/pt_dem2.png'
+import Map1_ASTR from './images/fig1_astr.png'
+import Map2_ALOS from './images/fig2_alos.png'
+import Map3_SRTM from './images/fig3_srtm.png'
+import Map4_TSAR from './images/fig4_tsar.png'
+
+export default (props) => <BlogpostTemplate meta={meta} {...props} />
 
 export const meta = {
   author: 'José Gonçalves',
@@ -9,9 +16,13 @@ export const meta = {
   description: 'This is where you describe and summarize your blogpost.',
 }
 
-export default (props) => <BlogpostTemplate meta={meta} {...props} />
-
 ## Digital Elevation Model (DEM) Data for Portugal
+
+<Image
+  src={Map_DEMs}
+  alt="DEM PT 2"
+  className="rounded object-cover shadow-xl"
+/>
 
 The [links below](#Download) contain digital elevation models for Portugal Continental, obtained from satellite missions: SRTM, ASTER, ALOS-Prism and TerraSAR-X. These data are open, but if used should be referenced to their origin (NASA, JAXA, DLR) and this web page regarding the preparation of data for Portugal Continental. See below details about the original data.
 
@@ -22,3 +33,54 @@ The pixel values were obtained by bilinear resampling. In the case of TerraSAR-X
 All rasters are in the GeoTiff format, as 16-bit integers, "deflate" compression, with internal "tiles" and "overviews", starting at level 4.
 
 ## Download
+
+- [SRTM-DEM EPSG:4326, GSD=1"](http://gis.ciimar.up.pt/gisData/dems/dem_srtm_pt_1sec.tif) ⬇️
+- [SRTM-DEM EPSG:3763, GSD=25m](http://gis.ciimar.up.pt/gisData/dems/dem_srtm_pt_25m.tif) ⬇️
+- [ASTER-GDEM EPSG:4326, GSD=1"](http://gis.ciimar.up.pt/gisData/dems/dem_astr_pt_1sec.tif) ⬇️
+- [ASTER-GDEM EPSG:3763, GSD=25m](http://gis.ciimar.up.pt/gisData/dems/dem_astr_pt_25m.tif) ⬇️
+- [ALOS-AW3D30 EPSG:4326, GSD=1"](http://gis.ciimar.up.pt/gisData/dems/dem_aw3d_pt_1sec.tif) ⬇️
+- [ALOS-AW3D30 EPSG:3763, GSD=25m](http://gis.ciimar.up.pt/gisData/dems/dem_aw3d_pt_25m.tif) ⬇️
+- [TanDEM-X-90 EPSG:4326, GSD=3"](http://gis.ciimar.up.pt/gisData/dems/dem_tdem_pt_3sec.tif) ⬇️
+- [TanDEM-X-90 EPSG:3763, GSD=80m](http://gis.ciimar.up.pt/gisData/dems/dem_tdem_pt_80m.tif) ⬇️
+- [QGIS project file with DEMs loaded from the GIS server](https://www.fc.up.pt/pessoas/jagoncal/dems/dems_pt.zip) 📄
+
+If your browser prevents the download for security reasons, right-click and choose **Save Link As**.
+
+## DEMs comparison
+
+The following figures show the 4 DEMs for a 15 km by 15 km area (_Serra de Aire_). The best quality is the ALOS AW3D. Its main limitation is the relatively high number of empty pixels in two rows (image at the beginning of the page).
+
+<div className="my-2 grid grid-cols-2 gap-4 md:gap-8">
+  <Image
+    src={Map1_ASTR}
+    alt="ASTR"
+    className="rounded object-cover shadow-xl"
+  />
+  <Image
+    src={Map2_ALOS}
+    alt="ALOS"
+    className="rounded object-cover shadow-xl"
+  />
+  <Image
+    src={Map3_SRTM}
+    alt="SRTM"
+    className="rounded object-cover shadow-xl"
+  />
+  <Image
+    src={Map4_TSAR}
+    alt="TSAR"
+    className="rounded object-cover shadow-xl"
+  />
+</div>
+
+## Original datasets
+
+SRTM-DEM was obtained by the Shuttle Radar Topography Mission by SAR Interferometry, in an approximate resolution of 30 m, between latitudes 60S and 60N. Data are available in 14297 granules of 1 by 1 degrees, from [NASA Earth Data](https://www.earthdata.nasa.gov/eosdis/daacs/lpdaac).
+
+ASTER-GDEM was obtained by photogrammetric methods from the Japanese ASTER-VNIR sensor (infra-red nadir and backwards sensors with 15 m GSD). Data are available for most of the planet in 22912 granules of 1 by 1 degrees from the [NASA Earth Data](https://www.earthdata.nasa.gov/eosdis/daacs/lpdaac) and from [Japan Space Systems](https://gdemdl.aster.jspacesystems.or.jp/index_en.html).
+
+ALOS World 3D DEM was obtained by photogrametric methods from sensor PRISM onboard the Japanese ALOS satellite. PRISM is a triple linear sensor (forward, nadir and backward) which generates panchromatic images with a GSD of 2.5 m. Data was processed in order to obtain DEMs in a spatial resolution of 1 arc-second. Data are available from the [Japanese Space Agency - JAXA](https://www.eorc.jaxa.jp/ALOS/en/url_change_info_e.htm).
+
+The TerraSAR-X DEM was obtained by the Tandem TerraSAR-X mission, using SAR interferometry. Terrain elevation is obtained in a resolution of 10 meters, but is made available in 3 arc-seconds grid spacing. Data can be obtained from the [DLR Geoservice](https://download.geoservice.dlr.de/TDM90/).
+
+> This blogpost and its data were prepared by José Alberto Gonçalves ([jagoncal at fc.up.pt](mailto:jagoncal at fc.up.pt)) and André Pinhal ([apinhal at fc.up.pt](apinhal at fc.up.pt))
