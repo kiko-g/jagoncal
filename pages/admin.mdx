@@ -1,0 +1,79 @@
+import { BlogpostTemplate } from '@/components/BlogpostTemplate'
+
+export default (props) => <BlogpostTemplate meta={meta} {...props} />
+
+export const meta = {
+  author: 'Francisco Gonçalves',
+  date: '2023-04-18',
+  title: 'Editing content in your website',
+  description:
+    'A comprenhensive guide on how to edit content in this NextJS website I built.',
+}
+
+First, you should take a look at our project's file structure. Click on the button below to fold or unfold the file structure tree.
+
+<details>
+  <summary className="whitespace-nowrap">File Structure Tree</summary>
+  <ul>
+    <li>components</li>
+    <li>images</li>
+    <li>lib</li>
+    <li>
+      pages
+      <ul>
+        <li>
+          blog
+          <ul>
+            <li>`[slug].mdx`</li>
+            <li>...</li>
+          </ul>
+        </li>
+        <li>`index.mdx`</li>
+        <li>`about.mdx`</li>
+        <li>`projects.mdx`</li>
+        <li>`teaching.mdx`</li>
+      </ul>
+    </li>
+    <li>public</li>
+    <li>styles</li>
+    <li>types</li>
+  </ul>
+</details>
+
+Essentially the points of interaction are the `*.mdx` files, when you want to edit pages across the website. You do not have to worry about the rest of the file structure, assuming you are happy with the current layout and points of editing availability.
+
+If you want to add more pages, you can do so by creating a new `*.mdx` file in the `pages` folder. If you want to add more blog posts, you can do so by creating a new `*.mdx` file in the `pages/blog` folder.
+
+## Editing step by step guide
+
+If you are not very familiar with touching the code and editing it locally, this section is for you. Next up is a list of steps you need to follow to edit the content of the website.
+
+1. Head over to the the [GitHub repository](https://github.com/kiko-g/jagoncal) of this website.
+2. Look for the green button with the text `Code` and click on it. This should open a dropdown.
+3. The dropdown should have a tab named `Codespaces` which is a GitHub tool to edit code on the cloud, skipping the need to clone and setup the repository locally. Click on it.
+4. If this is the first time you are using GitHub Codespaces, you will be asked to create a new one. Click on the `Create codespace on main` button. Otherwise, choose the codespace you want to use that you have previously created.
+5. You should have been taken to an address that is the codespace. The codespace gives you a VS Code window with the code of the repository already cloned and ready to be edited. You can now edit the code as you wish.
+6. You will notice that your window has vertical tabs on the left. Here are the relevant tabs:
+
+   1. The first one is the file explorer. You can use it to navigate through the files of the project.
+   2. The second one is the search tab. You can use it to search for files and text in the project.
+   3. The third one is the version control tab. You can use it to see the changes you have made to the code and commit them.
+   4. The fourth one is the extensions tab. You can use it to install and manage extensions.
+
+7. [Optional] You should install the following extensions for optimal experience:
+
+   - Material Icons
+   - Prettier
+   - MDX
+   - ESLint
+   - Tailwind CSS IntelliSense
+   - Tailwind Docs
+   - Atom Keymap
+
+8. On the **File Explorer** tab, go ahead and open the `pages` folder.
+9. Open the `index.mdx` file. If you edit the content below `export const meta` you should see changes in the main text of your website.
+10. Assuming you have made all the changes you wanted, go ahead and commit them. Go to the **Version Control** tab.
+11. Now you can start by clicking on the `+` button on the **Version Control** tab. Make sure you click the `+` on the `Changes` button, which will add all your changes to a staging area. There are other `+` buttons that will add each specific file to the staging area.
+12. Once you have added all the changes you want to commit, you can write a commit message. You can do so by clicking on the `Message` button on the **Version Control** tab.
+13. Once you have written a commit message, you can commit your changes by clicking on the `Commit` button on the **Version Control** tab.
+14. Once you have committed your changes, you can push them to the repository by clicking on the `Push` button on the **Version Control** tab.

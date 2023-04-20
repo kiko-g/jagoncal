@@ -24,6 +24,10 @@ const navigation = [
     title: 'Teaching',
     href: '/teaching',
   },
+  {
+    title: 'Edit',
+    href: '/admin',
+  },
 ]
 
 export default function Footer({}: Props) {
@@ -33,12 +37,12 @@ export default function Footer({}: Props) {
         <div className="relative mx-4 sm:mx-8 lg:mx-12">
           <div className="mx-auto max-w-2xl lg:max-w-5xl">
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <div className="flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              <div className="flex gap-4 md:gap-6">
                 {navigation.map((item) => (
                   <Link
                     href={item.href}
                     key={`footer-nav-${item.title}`}
-                    className="transition hover:text-blue-600 dark:hover:text-blue-500"
+                    className="text-sm font-medium tracking-tighter text-zinc-800 transition hover:text-blue-600 dark:text-zinc-200 dark:hover:text-blue-500"
                   >
                     {item.title}
                   </Link>

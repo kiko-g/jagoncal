@@ -24,3 +24,7 @@ h6 {
 pre {
   @apply my-6 whitespace-pre-wrap rounded bg-dark p-4 font-code text-sm dark:bg-zinc-800;
 }
+
+code {
+  @apply text-pink-700;
+}
