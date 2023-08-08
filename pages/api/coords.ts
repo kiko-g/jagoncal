@@ -4,6 +4,8 @@ import { exec } from 'child_process'
 
 type Data = {
   message: string
+  stdout?: string | string[]
+  stderr?: string | string[]
 }
 
 // @desc     Ping service
@@ -14,16 +16,21 @@ export default async function ping(
   res: NextApiResponse<Data>
 ) {
   try {
-    exec('./scripts/coords', (error, stdout, stderr) => {
+    const scriptPath = './scripts/coords'
+    exec(scriptPath, (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`)
         return res.status(500).json({ message: 'Failed to execute C program.' })
       }
-      res.json({ message: stdout })
+
+      res.json({
+        message: `Successfully ran ${scriptPath}`,
+        stdout: stdout.trim().split('\n'),
+        stderr: stderr.trim().split('\n'),
+      })
     })
   } catch (error) {
-    const errorMessage =
-      error instanceof Error ? error.message : 'Something went wrong'
-    res.status(500).json({ message: errorMessage })
+    const msg = error instanceof Error ? error.message : 'Something went wrong'
+    res.status(500).json({ message: msg })
   }
 }
